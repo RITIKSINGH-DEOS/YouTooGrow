@@ -4,6 +4,8 @@ import { AgencyIntro } from "@/components/introduction/agency-intro";
 import { TrustMetrics } from "@/components/trust/trust-metrics";
 import { ServicesSection } from "@/components/services/services-section";
 import { HowWeWork } from "@/components/workflow/how-we-work";
+import { ProofInMotion } from "@/components/proof/proof-in-motion";
+import { CaseStudiesSection } from "@/components/case-studies/case-studies";
 
 export default function HomePage() {
   return (
@@ -26,6 +28,12 @@ export default function HomePage() {
 
         {/* 6. How We Work (01 to 06 Workflow Timeline) */}
         <HowWeWork />
+
+        {/* 7. Proof in Motion (Wall of Wins Infinite Marquee) */}
+        <ProofInMotion />
+
+        {/* 8. Case Studies Section */}
+        <CaseStudiesSection />
       </main>
 
       {/* Baseline footer */}
