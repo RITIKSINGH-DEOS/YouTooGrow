@@ -73,15 +73,12 @@ export function CaseStudiesSection() {
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#f7f4ef] tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#f7f4ef] tracking-tight">
             Engineered for Virality.{" "}
             <span className="font-serif italic font-normal text-[#ff2626]">
               Best Performing Shorts.
             </span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#aaa6a0] max-w-lg mx-auto">
-            A curated showcase of retention-engineered vertical hooks, high-CTR framing, and algorithmically optimized Shorts & Reels produced by YouTooGrow.
-          </p>
 
           {/* Platform Filter Tabs */}
           <div className="mt-5 sm:mt-6 flex items-center p-1 sm:p-1.5 rounded-full bg-[#121212] border border-white/[0.08] gap-1 w-full max-w-[310px] min-[390px]:max-w-[330px] sm:max-w-none sm:w-auto mx-auto justify-between sm:justify-start shadow-inner">
