@@ -45,9 +45,9 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
         </div>
 
         {/* Authority Pill */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full border border-white/[0.08] bg-[#101010]/90 backdrop-blur-md mb-2 sm:mb-2.5 shadow-sm">
-          <span className="flex h-1.5 w-1.5 rounded-full bg-[#ff2626] shadow-[0_0_6px_#ff2626]"></span>
-          <span className="text-[10px] sm:text-[10.5px] font-semibold uppercase tracking-wider text-[#aaa6a0]">
+        <div className="inline-flex items-center justify-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-0.5 rounded-full border border-white/[0.08] bg-[#101010]/90 backdrop-blur-md mb-2 sm:mb-2.5 shadow-sm max-w-full">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#ff2626] shadow-[0_0_6px_#ff2626] shrink-0"></span>
+          <span className="text-[8.5px] sm:text-[10.5px] font-semibold uppercase tracking-tight sm:tracking-wider text-[#aaa6a0] whitespace-nowrap">
             Research-Driven Content Strategy &bull; YouTube &amp; Instagram
           </span>
         </div>
