@@ -52,19 +52,13 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
           </span>
         </div>
 
-        {/* Master Headline */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#f7f4ef] tracking-tight leading-[1.1] mb-3">
-          Your Content Deserves{" "}
-          <span className="block sm:inline font-serif italic font-normal text-[#ff2626]">
-            More Than Just Views.
+        {/* Punchy 2-Line Master Headline (White & Red, No Subtitle Paragraph Fluff) */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#f7f4ef] tracking-tight leading-[1.12] mb-6 sm:mb-8">
+          Stop Chasing Empty Views.{" "}
+          <span className="block font-serif italic font-normal text-[#ff2626]">
+            We Turn Content Into Growth.
           </span>
         </h1>
-
-        {/* Supporting Headline */}
-        <p className="max-w-2xl mx-auto text-xs sm:text-sm text-[#aaa6a0] font-normal leading-relaxed mb-6">
-          We turn attention into predictable pipeline through algorithmic research, high-retention editing, and
-          end-to-end channel management.
-        </p>
 
         {/* The Video Framework Card with Real Founder Studio Photo */}
         <div className="relative aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/[0.12] bg-[#101010] shadow-[0_25px_60px_rgba(0,0,0,0.85)] group mb-8">
