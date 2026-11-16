@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/hero/hero-section";
 import { PlatformLogos } from "@/components/trust/platform-logos";
-import { ServicesSection } from "@/components/services/services-section";
-import { HowWeWork } from "@/components/workflow/how-we-work";
+import { ProcessSection } from "@/components/workflow/process-section";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
 import { CaseStudiesSection } from "@/components/case-studies/case-studies";
 import { WhyChooseUs } from "@/components/advantages/why-choose-us";
@@ -19,13 +18,10 @@ export default function HomePage() {
         {/* 2. Platforms & Production Ecosystem Logos Ticker */}
         <PlatformLogos />
 
-        {/* 3. Services Section (YouTube & Instagram) */}
-        <ServicesSection />
+        {/* 3. The Process: You Record. We Handle Everything Else. (YouTube & Instagram) */}
+        <ProcessSection />
 
-        {/* 4. How We Work (01 to 06 Workflow Timeline) */}
-        <HowWeWork />
-
-        {/* 5. Proof in Motion (Wall of Wins Infinite Marquee) */}
+        {/* 4. Proof in Motion (Wall of Wins Infinite Marquee) */}
         <ProofInMotion />
 
         {/* 6. Case Studies Section */}
