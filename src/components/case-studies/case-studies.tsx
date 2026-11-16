@@ -46,38 +46,41 @@ export function CaseStudiesSection() {
           </p>
 
           {/* Platform Filter Tabs */}
-          <div className="mt-6 inline-flex p-1 rounded-full bg-[#121212] border border-white/[0.08] gap-1">
+          <div className="mt-5 sm:mt-6 inline-flex items-center p-1 rounded-full bg-[#121212] border border-white/[0.08] gap-1 max-w-full overflow-x-auto">
             <button
               onClick={() => setActivePlatform("ALL")}
-              className={`px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 ${
+              className={`px-2.5 sm:px-3.5 py-1.5 rounded-full text-[10px] min-[360px]:text-[10.5px] sm:text-[11px] font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
                 activePlatform === "ALL"
                   ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              All Assets ({featuredShorts.length})
+              <span className="sm:hidden">All ({featuredShorts.length})</span>
+              <span className="hidden sm:inline">All Assets ({featuredShorts.length})</span>
             </button>
             <button
               onClick={() => setActivePlatform("YouTube")}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 ${
+              className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-full text-[10px] min-[360px]:text-[10.5px] sm:text-[11px] font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
                 activePlatform === "YouTube"
                   ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              <Youtube className="w-3.5 h-3.5" />
-              YouTube Shorts
+              <Youtube className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <span className="sm:hidden">Shorts</span>
+              <span className="hidden sm:inline">YouTube Shorts</span>
             </button>
             <button
               onClick={() => setActivePlatform("Instagram")}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 ${
+              className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-full text-[10px] min-[360px]:text-[10.5px] sm:text-[11px] font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
                 activePlatform === "Instagram"
                   ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              <Instagram className="w-3.5 h-3.5" />
-              Instagram Reels
+              <Instagram className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <span className="sm:hidden">Reels</span>
+              <span className="hidden sm:inline">Instagram Reels</span>
             </button>
           </div>
         </div>
