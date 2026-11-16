@@ -1,18 +1,56 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { featuredShorts, FeaturedShort } from "@/data/featured-shorts.data";
-import { Youtube, Instagram, Play, Flame, X, Sparkles, TrendingUp, CheckCircle2 } from "lucide-react";
+import {
+  Youtube,
+  Instagram,
+  Play,
+  Flame,
+  X,
+  Sparkles,
+} from "lucide-react";
 
 export function CaseStudiesSection() {
   const [activePlatform, setActivePlatform] = useState<"ALL" | "YouTube" | "Instagram">("ALL");
   const [selectedShort, setSelectedShort] = useState<FeaturedShort | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const filteredShorts =
     activePlatform === "ALL"
       ? featuredShorts
       : featuredShorts.filter((item) => item.platform === activePlatform);
+
+  const handlePlatformChange = (platform: "ALL" | "YouTube" | "Instagram") => {
+    setActivePlatform(platform);
+    setActiveIndex(0);
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const containerCenter = container.scrollLeft + container.clientWidth / 2;
+    const cards = container.querySelectorAll<HTMLElement>("[data-short-card]");
+
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    cards.forEach((card, idx) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const distance = Math.abs(containerCenter - cardCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = idx;
+      }
+    });
+
+    setActiveIndex(closestIndex);
+  };
 
   return (
     <section
@@ -27,7 +65,7 @@ export function CaseStudiesSection() {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] mb-3">
             <span className="w-1.5 h-1.5 rounded-full bg-[#ff2626] animate-pulse" />
             <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#ff2626]">
@@ -46,52 +84,66 @@ export function CaseStudiesSection() {
           </p>
 
           {/* Platform Filter Tabs */}
-          <div className="mt-6 inline-flex p-1 rounded-full bg-[#121212] border border-white/[0.08] gap-1">
+          <div className="mt-5 sm:mt-6 flex items-center p-1 sm:p-1.5 rounded-full bg-[#121212] border border-white/[0.08] gap-1 w-full max-w-[310px] min-[390px]:max-w-[330px] sm:max-w-none sm:w-auto mx-auto justify-between sm:justify-start shadow-inner">
             <button
-              onClick={() => setActivePlatform("ALL")}
-              className={`px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 ${
+              onClick={() => handlePlatformChange("ALL")}
+              className={`flex-1 sm:flex-initial flex items-center justify-center px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
                 activePlatform === "ALL"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
+                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              All Assets ({featuredShorts.length})
+              <span className="sm:hidden">All ({featuredShorts.length})</span>
+              <span className="hidden sm:inline">All Assets ({featuredShorts.length})</span>
             </button>
             <button
-              onClick={() => setActivePlatform("YouTube")}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 ${
+              onClick={() => handlePlatformChange("YouTube")}
+              className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
                 activePlatform === "YouTube"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
+                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              <Youtube className="w-3.5 h-3.5" />
-              YouTube Shorts
+              <Youtube className="w-3.5 h-3.5 shrink-0" />
+              <span className="sm:hidden">Shorts</span>
+              <span className="hidden sm:inline">YouTube Shorts</span>
             </button>
             <button
-              onClick={() => setActivePlatform("Instagram")}
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 ${
+              onClick={() => handlePlatformChange("Instagram")}
+              className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
                 activePlatform === "Instagram"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
+                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              <Instagram className="w-3.5 h-3.5" />
-              Instagram Reels
+              <Instagram className="w-3.5 h-3.5 shrink-0" />
+              <span className="sm:hidden">Reels</span>
+              <span className="hidden sm:inline">Instagram Reels</span>
             </button>
           </div>
         </div>
 
-        {/* 9:16 Vertical Video Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {filteredShorts.map((item) => {
+        {/* Video Cards Showcase: Mobile Horizontal Carousel / Desktop 4-Column Grid */}
+        <div
+          key={activePlatform}
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 pt-1 px-6 -mx-6 sm:px-0 sm:mx-0 transition-all duration-400 ease-out animate-in fade-in-0 slide-in-from-bottom-2"
+        >
+          {filteredShorts.map((item, idx) => {
             const isYoutube = item.platform === "YouTube";
+            const isCenter = idx === activeIndex;
 
             return (
               <div
                 key={item.id}
+                data-short-card
                 onClick={() => setSelectedShort(item)}
-                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0d0d0d] to-[#070707] shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden flex flex-col justify-between aspect-[9/16] w-full max-w-[310px] sm:max-w-none mx-auto cursor-pointer"
+                className={`relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0d0d0d] to-[#070707] shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden flex flex-col justify-between aspect-[9/16] w-[260px] min-[390px]:w-[280px] sm:w-full shrink-0 sm:shrink snap-center sm:snap-align-none cursor-pointer ${
+                  isCenter
+                    ? "blur-none opacity-100"
+                    : "blur-[2px] opacity-75 sm:blur-none sm:opacity-100"
+                }`}
               >
                 {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
                 <div
