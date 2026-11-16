@@ -39,52 +39,52 @@ export function ProofInMotion() {
   ];
 
   return (
-    <section className="pt-6 pb-16 sm:pt-8 sm:pb-20 md:pt-10 md:pb-24 relative overflow-hidden" id="proof">
+    <section className="pt-4 pb-12 sm:pt-6 sm:pb-14 md:pt-6 md:pb-16 relative overflow-hidden" id="proof">
       {/* Background Soft Glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-[#ff2626]/[0.025] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#ff2626]/[0.02] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
 
-      {/* Section Header */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-8 text-center">
-        <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#ff2626] block mb-2">
+      {/* Compact Section Header */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-5 sm:mb-6 text-center">
+        <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#ff2626] block mb-1">
           Algorithmic Yield
         </span>
 
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#f7f4ef] tracking-tight mb-3">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#f7f4ef] tracking-tight mb-1.5">
           Proof in{" "}
           <span className="font-serif italic font-normal text-[#ff2626]">
             Motion
           </span>
         </h2>
 
-        <p className="max-w-xl mx-auto text-[#aaa6a0] text-xs sm:text-sm">
+        <p className="max-w-lg mx-auto text-[#aaa6a0] text-xs leading-normal">
           Real YouTube Studio &amp; Instagram analytics dashboards from channels we scale.
         </p>
 
-        <div className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-[#6f6b67]">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#00b67a]" />
+        <div className="mt-2 inline-flex items-center gap-1.5 text-[10px] text-[#6f6b67]">
+          <ShieldCheck className="w-3 h-3 text-[#00b67a]" />
           <span>Hover over any screenshot to pause</span>
         </div>
       </div>
 
       {/* Track 1: Moves Left */}
-      <div className="relative w-full overflow-hidden mb-4 group select-none">
-        <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
+      <div className="relative w-full overflow-hidden mb-2.5 sm:mb-3 group select-none">
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-4 w-max animate-marquee-left-medium group-hover:[animation-play-state:paused]">
+        <div className="flex gap-3 w-max animate-marquee-left-medium group-hover:[animation-play-state:paused]">
           {row1.map((item, idx) => (
             <div
               key={`r1-${item.id}-${idx}`}
-              className="relative w-[340px] sm:w-[420px] aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/50 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
+              className="relative w-[230px] sm:w-[260px] md:w-[280px] aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/60 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 768px) 340px, 420px"
+                sizes="(max-width: 768px) 230px, 280px"
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -93,21 +93,21 @@ export function ProofInMotion() {
       </div>
 
       {/* Track 2: Moves Right */}
-      <div className="relative w-full overflow-hidden mb-4 group select-none">
-        <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
+      <div className="relative w-full overflow-hidden mb-2.5 sm:mb-3 group select-none">
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-4 w-max animate-marquee-right-medium group-hover:[animation-play-state:paused]">
+        <div className="flex gap-3 w-max animate-marquee-right-medium group-hover:[animation-play-state:paused]">
           {row2.map((item, idx) => (
             <div
               key={`r2-${item.id}-${idx}`}
-              className="relative w-[340px] sm:w-[420px] aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/50 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
+              className="relative w-[230px] sm:w-[260px] md:w-[280px] aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/60 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 768px) 340px, 420px"
+                sizes="(max-width: 768px) 230px, 280px"
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -117,20 +117,20 @@ export function ProofInMotion() {
 
       {/* Track 3: Moves Left */}
       <div className="relative w-full overflow-hidden group select-none">
-        <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[#080808] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[#080808] to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-4 w-max animate-marquee-left group-hover:[animation-play-state:paused]">
+        <div className="flex gap-3 w-max animate-marquee-left group-hover:[animation-play-state:paused]">
           {row3.map((item, idx) => (
             <div
               key={`r3-${item.id}-${idx}`}
-              className="relative w-[340px] sm:w-[420px] aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/50 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
+              className="relative w-[230px] sm:w-[260px] md:w-[280px] aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/60 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
             >
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                sizes="(max-width: 768px) 340px, 420px"
+                sizes="(max-width: 768px) 230px, 280px"
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
