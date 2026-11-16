@@ -113,7 +113,7 @@ export function PlatformLogos() {
   return (
     <section
       aria-label="Platforms and Creative Ecosystem Stack"
-      className="relative py-8 sm:py-9 border-y border-white/[0.06] bg-[#0a0a0a] overflow-hidden"
+      className="relative py-4 sm:py-5 border-y border-white/[0.06] bg-[#0a0a0a] overflow-hidden"
     >
       {/* Soft Vignette Gradients on Left and Right Edges */}
       <div
