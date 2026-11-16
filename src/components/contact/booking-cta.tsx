@@ -14,17 +14,16 @@ export function BookingCTA() {
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Master Headline - Matching Site's Signature Font */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#f7f4ef] tracking-tight leading-[1.15] mb-4 sm:mb-5">
-          Ready to be #1 in your{" "}
+          Ready to become the #1 name in your{" "}
           <span className="font-serif italic font-normal text-[#ff2626]">
-            niche?
+            industry?
           </span>
         </h2>
 
-        {/* Subtitle with Ritik Founder Call Qualification */}
-        <div className="max-w-xl mx-auto text-xs sm:text-sm md:text-base text-[#aaa6a0] leading-relaxed mb-8 sm:mb-10 space-y-1">
-          <p>We take on a limited number of clients each month.</p>
-          <p>Apply now to see if you qualify for a strategy call with Ritik.</p>
-        </div>
+        {/* User's Exact Subtext */}
+        <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-[#aaa6a0] leading-relaxed mb-8 sm:mb-10">
+          Build a brand that stands out, attracts attention, and leaves competitors behind. Let&apos;s make it happen.
+        </p>
 
         {/* High-Impact Solid Red Action Button */}
         <div className="flex justify-center">
