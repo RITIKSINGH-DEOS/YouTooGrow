@@ -3,79 +3,68 @@ import { ArrowUpRight, Play, CheckCircle2, TrendingUp } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Background Lighting Accent (Grounded, non-neon) */}
+    <section className="relative pt-28 pb-14 md:pt-36 md:pb-20 overflow-hidden">
+      {/* Background Lighting Accent */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#ff2626]/[0.07] rounded-full blur-[120px] pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.05),rgba(255,255,255,0))] pointer-events-none"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-[#ff2626]/[0.06] rounded-full blur-[100px] pointer-events-none"
         aria-hidden="true"
       />
 
-      <div className="max-w-5xl mx-auto px-6 sm:px-8 text-center relative z-10">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center relative z-10">
         {/* Subtle Authority Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.08] bg-[#101010]/80 backdrop-blur-sm mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-[#ff2626]"></span>
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#aaa6a0]">
-            Research-Driven Content Strategy & End-to-End Management
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/[0.08] bg-[#101010]/80 backdrop-blur-sm mb-6">
+          <span className="flex h-1.5 w-1.5 rounded-full bg-[#ff2626]"></span>
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#aaa6a0]">
+            Research-Driven Content Strategy &bull; YouTube &amp; Instagram
           </span>
         </div>
 
         {/* Master Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#f7f4ef] tracking-tight leading-[1.08] mb-6">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#f7f4ef] tracking-tight leading-[1.1] mb-5">
           Your Content Deserves{" "}
           <span className="block sm:inline font-serif italic font-normal text-[#ff2626]">
             More Than Just Views.
           </span>
         </h1>
 
-        {/* Supporting Headline */}
-        <p className="max-w-3xl mx-auto text-lg sm:text-xl text-[#aaa6a0] font-normal leading-relaxed mb-10">
-          We help creators, personal brands, and businesses turn attention into compounding digital growth on
-          YouTube and Instagram through algorithmic topic research, high-retention editing, and hands-off
-          channel management.
+        {/* Supporting Headline - Short & Impactful */}
+        <p className="max-w-2xl mx-auto text-base sm:text-lg text-[#aaa6a0] font-normal leading-relaxed mb-8">
+          We turn attention into predictable pipeline through algorithmic research, high-retention editing, and
+          end-to-end channel management.
         </p>
 
         {/* Action CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-10">
           <Link
             href="#contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wider bg-[#ff2626] hover:bg-[#d90808] text-white transition-all duration-200 shadow-[0_0_25px_rgba(255,38,38,0.3)] hover:shadow-[0_0_35px_rgba(255,38,38,0.5)] group"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#ff2626] hover:bg-[#d90808] text-white transition-all shadow-[0_0_20px_rgba(255,38,38,0.25)] group"
           >
             <span>Book a Free Strategy Call</span>
-            <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
 
           <Link
             href="#proof"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-wider border border-white/[0.12] hover:border-white/30 bg-[#101010]/60 hover:bg-[#151515] text-[#f7f4ef] transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-white/[0.1] hover:border-white/25 bg-[#101010]/60 text-[#f7f4ef] transition-colors"
           >
-            <Play className="w-3.5 h-3.5 text-[#ff2626] fill-[#ff2626]" />
-            <span>Explore Our Work</span>
+            <Play className="w-3 h-3 text-[#ff2626] fill-[#ff2626]" />
+            <span>Explore Proof</span>
           </Link>
         </div>
 
-        {/* Value Anchors Strip */}
-        <div className="pt-8 border-t border-white/[0.06] grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
-          <div className="flex items-center gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#ff2626] shrink-0" />
-            <span className="text-xs sm:text-sm font-medium text-[#aaa6a0]">
-              Zero-Guesswork Topic Research
-            </span>
+        {/* Value Anchors Strip - Clean & Compact */}
+        <div className="pt-6 border-t border-white/[0.06] flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-[#aaa6a0]">
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-[#ff2626] shrink-0" />
+            <span>Topic Outlier Research</span>
           </div>
-          <div className="flex items-center gap-3">
-            <TrendingUp className="w-5 h-5 text-[#00b67a] shrink-0" />
-            <span className="text-xs sm:text-sm font-medium text-[#aaa6a0]">
-              Pacing-Engineered Retention
-            </span>
+          <div className="flex items-center gap-2">
+            <TrendingUp className="w-4 h-4 text-[#00b67a] shrink-0" />
+            <span>Retention-First Pacing</span>
           </div>
-          <div className="flex items-center gap-3">
-            <CheckCircle2 className="w-5 h-5 text-[#ff2626] shrink-0" />
-            <span className="text-xs sm:text-sm font-medium text-[#aaa6a0]">
-              100% Hands-Off Execution
-            </span>
+          <div className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-[#ff2626] shrink-0" />
+            <span>100% Hands-Off Operations</span>
           </div>
         </div>
       </div>
