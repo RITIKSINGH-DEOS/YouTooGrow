@@ -46,10 +46,10 @@ export function CaseStudiesSection() {
           </p>
 
           {/* Platform Filter Tabs */}
-          <div className="mt-5 sm:mt-6 inline-flex items-center p-1 rounded-full bg-[#121212] border border-white/[0.08] gap-1 max-w-full overflow-x-auto">
+          <div className="mt-5 sm:mt-6 flex items-center p-1 sm:p-1.5 rounded-full bg-[#121212] border border-white/[0.08] gap-1 w-full max-w-[310px] min-[390px]:max-w-[330px] sm:max-w-none sm:w-auto mx-auto justify-between sm:justify-start">
             <button
               onClick={() => setActivePlatform("ALL")}
-              className={`px-2.5 sm:px-3.5 py-1.5 rounded-full text-[10px] min-[360px]:text-[10.5px] sm:text-[11px] font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
+              className={`flex-1 sm:flex-initial flex items-center justify-center px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
                 activePlatform === "ALL"
                   ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
                   : "text-[#8f8b85] hover:text-white"
@@ -60,25 +60,25 @@ export function CaseStudiesSection() {
             </button>
             <button
               onClick={() => setActivePlatform("YouTube")}
-              className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-full text-[10px] min-[360px]:text-[10.5px] sm:text-[11px] font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
+              className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
                 activePlatform === "YouTube"
                   ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              <Youtube className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <Youtube className="w-3.5 h-3.5 shrink-0" />
               <span className="sm:hidden">Shorts</span>
               <span className="hidden sm:inline">YouTube Shorts</span>
             </button>
             <button
               onClick={() => setActivePlatform("Instagram")}
-              className={`inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 rounded-full text-[10px] min-[360px]:text-[10.5px] sm:text-[11px] font-semibold whitespace-nowrap transition-all duration-200 shrink-0 ${
+              className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-200 ${
                 activePlatform === "Instagram"
                   ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.4)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
-              <Instagram className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+              <Instagram className="w-3.5 h-3.5 shrink-0" />
               <span className="sm:hidden">Reels</span>
               <span className="hidden sm:inline">Instagram Reels</span>
             </button>
