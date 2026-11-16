@@ -1,5 +1,4 @@
 import { HeroSection } from "@/components/hero/hero-section";
-import { TrustMetrics } from "@/components/trust/trust-metrics";
 import { ServicesSection } from "@/components/services/services-section";
 import { HowWeWork } from "@/components/workflow/how-we-work";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
@@ -16,10 +15,7 @@ export default function HomePage() {
         {/* 1. Hero Section with Integrated Video Framework Card */}
         <HeroSection />
 
-        {/* 2. Social Proof / Trust Section */}
-        <TrustMetrics />
-
-        {/* 3. Services Section (YouTube & Instagram) */}
+        {/* 2. Services Section (YouTube & Instagram) */}
         <ServicesSection />
 
         {/* 4. How We Work (01 to 06 Workflow Timeline) */}

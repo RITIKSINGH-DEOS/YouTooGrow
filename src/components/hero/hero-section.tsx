@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Play, CheckCircle2, TrendingUp, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Play, Sparkles, X } from "lucide-react";
 
 interface HeroSectionProps {
   videoSrc?: string;
@@ -118,7 +118,7 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
         </div>
 
         {/* Single Big High-Impact Action CTA */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center">
           <Link
             href="#contact"
             className="group relative inline-flex items-center justify-center gap-3 px-9 py-4 sm:px-14 sm:py-4.5 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider bg-[#ff2626] hover:bg-[#d90808] text-white transition-all duration-300 shadow-[0_0_30px_rgba(255,38,38,0.35)] hover:shadow-[0_0_45px_rgba(255,38,38,0.6)] hover:scale-[1.02]"
@@ -126,22 +126,6 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
             <span>Book a Free Strategy Call</span>
             <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
-        </div>
-
-        {/* Value Anchors Strip */}
-        <div className="pt-5 border-t border-white/[0.06] flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-[#aaa6a0]">
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#ff2626] shrink-0" />
-            <span>Topic Outlier Research</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-[#00b67a] shrink-0" />
-            <span>Retention-First Pacing</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-[#ff2626] shrink-0" />
-            <span>100% Hands-Off Operations</span>
-          </div>
         </div>
       </div>
 
