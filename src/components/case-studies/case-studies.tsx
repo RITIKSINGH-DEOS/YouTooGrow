@@ -10,13 +10,12 @@ import {
   Flame,
   X,
   Sparkles,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
 
 export function CaseStudiesSection() {
   const [activePlatform, setActivePlatform] = useState<"ALL" | "YouTube" | "Instagram">("ALL");
   const [selectedShort, setSelectedShort] = useState<FeaturedShort | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const filteredShorts =
@@ -26,15 +25,43 @@ export function CaseStudiesSection() {
 
   const handlePlatformChange = (platform: "ALL" | "YouTube" | "Instagram") => {
     setActivePlatform(platform);
+    setActiveIndex(0);
     if (scrollRef.current) {
       scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
     }
   };
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === "left" ? -280 : 280;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const containerCenter = container.scrollLeft + container.clientWidth / 2;
+    const cards = container.querySelectorAll<HTMLElement>("[data-short-card]");
+
+    let closestIndex = 0;
+    let minDistance = Infinity;
+
+    cards.forEach((card, idx) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const distance = Math.abs(containerCenter - cardCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = idx;
+      }
+    });
+
+    setActiveIndex(closestIndex);
+  };
+
+  const scrollToCard = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const cards = container.querySelectorAll<HTMLElement>("[data-short-card]");
+    const targetCard = cards[index];
+    if (targetCard) {
+      const containerWidth = container.clientWidth;
+      const cardCenter = targetCard.offsetLeft + targetCard.offsetWidth / 2;
+      const targetScrollLeft = cardCenter - containerWidth / 2;
+      container.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
     }
   };
 
@@ -107,50 +134,41 @@ export function CaseStudiesSection() {
               <span className="hidden sm:inline">Instagram Reels</span>
             </button>
           </div>
-
-          {/* Mobile Horizontal Swipe Cue & Navigation Arrows */}
-          <div className="sm:hidden flex items-center justify-between mt-4 px-1 max-w-[330px] mx-auto text-xs text-[#8f8b85]">
-            <span className="flex items-center gap-1.5 text-[11px] text-[#aaa6a0]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2626] animate-pulse" />
-              Swipe to explore ({filteredShorts.length} videos)
-            </span>
-            <div className="flex items-center gap-1.5">
-              <button
-                onClick={() => scroll("left")}
-                aria-label="Previous video"
-                className="w-7 h-7 rounded-full bg-[#141414] border border-white/10 flex items-center justify-center text-[#aaa6a0] hover:text-white hover:border-[#ff2626]/50 active:scale-95 transition-all"
-              >
-                <ChevronLeft className="w-3.5 h-3.5" />
-              </button>
-              <button
-                onClick={() => scroll("right")}
-                aria-label="Next video"
-                className="w-7 h-7 rounded-full bg-[#141414] border border-white/10 flex items-center justify-center text-[#aaa6a0] hover:text-white hover:border-[#ff2626]/50 active:scale-95 transition-all"
-              >
-                <ChevronRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
         </div>
 
-        {/* Video Cards Showcase: Mobile Horizontal Carousel / Desktop 4-Column Grid */}
+        {/* Video Cards Showcase: Mobile Cover Flow Focus / Desktop 4-Column Grid */}
         <div
           key={activePlatform}
           ref={scrollRef}
-          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 pt-1 px-6 -mx-6 sm:px-0 sm:mx-0 transition-all duration-400 ease-out animate-in fade-in-0 slide-in-from-bottom-2"
+          onScroll={handleScroll}
+          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 pt-2 px-[calc((100%-260px)/2)] min-[390px]:px-[calc((100%-275px)/2)] sm:px-0 sm:mx-0 transition-all duration-400 ease-out animate-in fade-in-0 slide-in-from-bottom-2 items-center"
         >
-          {filteredShorts.map((item) => {
+          {filteredShorts.map((item, idx) => {
             const isYoutube = item.platform === "YouTube";
+            const isCenter = idx === activeIndex;
 
             return (
               <div
                 key={item.id}
-                onClick={() => setSelectedShort(item)}
-                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0d0d0d] to-[#070707] shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden flex flex-col justify-between aspect-[9/16] w-[260px] min-[390px]:w-[280px] sm:w-full shrink-0 sm:shrink snap-center sm:snap-align-none cursor-pointer"
+                data-short-card
+                onClick={() => {
+                  if (typeof window !== "undefined" && window.innerWidth < 640 && !isCenter) {
+                    scrollToCard(idx);
+                  } else {
+                    setSelectedShort(item);
+                  }
+                }}
+                className={`relative rounded-2xl border bg-gradient-to-b from-[#131313] via-[#0d0d0d] to-[#070707] transition-all duration-500 ease-out group overflow-hidden flex flex-col justify-between aspect-[9/16] w-[260px] min-[390px]:w-[275px] sm:w-full shrink-0 sm:shrink snap-center sm:snap-align-none cursor-pointer ${
+                  isCenter
+                    ? "border-white/[0.16] shadow-[0_20px_50px_rgba(0,0,0,0.85)] scale-100 opacity-100 blur-none z-10 sm:border-white/[0.08]"
+                    : "border-white/[0.04] shadow-[0_10px_25px_rgba(0,0,0,0.5)] scale-[0.92] opacity-40 blur-[2.5px] sm:blur-none sm:opacity-100 sm:scale-100 sm:border-white/[0.08]"
+                } hover:border-[#ff2626]/60 hover:shadow-[0_20px_50px_-10px_rgba(255,38,38,0.25)] sm:hover:-translate-y-1.5`}
               >
-                {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
+                {/* Top Subtle Crimson Radiant Accent Beam on Hover / Center */}
                 <div
-                  className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_12px_#ff2626] z-20"
+                  className={`absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent transition-opacity duration-300 shadow-[0_0_12px_#ff2626] z-20 ${
+                    isCenter ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  }`}
                   aria-hidden="true"
                 />
 
@@ -231,6 +249,22 @@ export function CaseStudiesSection() {
               </div>
             );
           })}
+        </div>
+
+        {/* Mobile Minimal Active Dots */}
+        <div className="sm:hidden flex items-center justify-center gap-1.5 mt-3">
+          {filteredShorts.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => scrollToCard(idx)}
+              aria-label={`Go to video ${idx + 1}`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                idx === activeIndex
+                  ? "w-6 bg-[#ff2626] shadow-[0_0_8px_#ff2626]"
+                  : "w-1.5 bg-white/20 hover:bg-white/40"
+              }`}
+            />
+          ))}
         </div>
       </div>
 
