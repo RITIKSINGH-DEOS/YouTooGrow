@@ -23,9 +23,9 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
 
   return (
     <section className="relative pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 overflow-hidden">
-      {/* Background Lighting Accent */}
+      {/* Cinematic Ambient Glow Behind Headline */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#ff2626]/[0.06] rounded-full blur-[120px] pointer-events-none"
+        className="absolute top-28 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(255,38,38,0.14)_0%,rgba(255,38,38,0.02)_50%,transparent_75%)] blur-[90px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -45,17 +45,19 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
         </div>
 
         {/* Authority Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/[0.08] bg-[#101010]/80 backdrop-blur-sm mb-4">
-          <span className="flex h-1.5 w-1.5 rounded-full bg-[#ff2626]"></span>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-white/[0.08] bg-[#101010]/90 backdrop-blur-md mb-4 shadow-sm">
+          <span className="flex h-1.5 w-1.5 rounded-full bg-[#ff2626] shadow-[0_0_8px_#ff2626]"></span>
           <span className="text-[11px] font-semibold uppercase tracking-wider text-[#aaa6a0]">
             Research-Driven Content Strategy &bull; YouTube &amp; Instagram
           </span>
         </div>
 
-        {/* Punchy 2-Line Master Headline (White & Red, No Subtitle Paragraph Fluff) */}
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#f7f4ef] tracking-tight leading-[1.12] mb-6 sm:mb-8">
-          Stop Chasing Empty Views.{" "}
-          <span className="block font-serif italic font-normal text-[#ff2626]">
+        {/* Master Catchy 2-Line Headline with Radiant Gradient & Glow */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 sm:mb-8">
+          <span className="block bg-gradient-to-b from-[#ffffff] via-[#f7f4ef] to-[#cfcac0] bg-clip-text text-transparent drop-shadow-sm">
+            Stop Chasing Empty Views.
+          </span>
+          <span className="block font-serif italic font-normal bg-gradient-to-r from-[#ff4d4d] via-[#ff2626] to-[#e60000] bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,38,38,0.4)] mt-1">
             We Turn Content Into Growth.
           </span>
         </h1>
