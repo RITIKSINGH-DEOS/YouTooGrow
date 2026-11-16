@@ -112,8 +112,8 @@ export function ProcessSection() {
         </div>
 
         {/* Stable Non-Shifting Platform Switcher with Smooth Slider Indicator */}
-        <div className="flex items-center justify-center mb-10">
-          <div className="relative inline-flex p-1 rounded-full border border-white/[0.08] bg-[#101010] shadow-inner select-none">
+        <div className="flex items-center justify-center mb-8 sm:mb-10 px-4">
+          <div className="relative inline-flex p-1 rounded-full border border-white/[0.08] bg-[#101010] shadow-inner select-none max-w-full">
             {/* Sliding Red Active Background Pill */}
             <div
               className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-[#ff2626] shadow-[0_0_25px_rgba(255,38,38,0.45)] transition-all duration-300 ease-out ${
@@ -125,24 +125,24 @@ export function ProcessSection() {
             <button
               type="button"
               onClick={() => setActiveTab("youtube")}
-              className={`relative z-10 flex items-center justify-center gap-2 w-40 sm:w-48 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
+              className={`relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 w-[140px] min-[390px]:w-[155px] sm:w-48 py-2 sm:py-2.5 rounded-full text-[10px] min-[390px]:text-[11px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-wider whitespace-nowrap transition-colors duration-200 ${
                 activeTab === "youtube" ? "text-white" : "text-[#aaa6a0] hover:text-white"
               }`}
               aria-pressed={activeTab === "youtube"}
             >
-              <Youtube className="w-4 h-4 shrink-0" />
+              <Youtube className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               <span>YouTube Process</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab("instagram")}
-              className={`relative z-10 flex items-center justify-center gap-2 w-40 sm:w-48 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
+              className={`relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 w-[140px] min-[390px]:w-[155px] sm:w-48 py-2 sm:py-2.5 rounded-full text-[10px] min-[390px]:text-[11px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-wider whitespace-nowrap transition-colors duration-200 ${
                 activeTab === "instagram" ? "text-white" : "text-[#aaa6a0] hover:text-white"
               }`}
               aria-pressed={activeTab === "instagram"}
             >
-              <Instagram className="w-4 h-4 shrink-0" />
+              <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               <span>Instagram Process</span>
             </button>
           </div>
