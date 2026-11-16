@@ -38,6 +38,7 @@ const config: Config = {
       },
       animation: {
         "marquee-left": "marqueeLeft 35s linear infinite",
+        "marquee-left-slow": "marqueeLeft 75s linear infinite",
         "marquee-right": "marqueeRight 35s linear infinite",
         "pulse-subtle": "pulseSubtle 3s ease-in-out infinite",
       },
