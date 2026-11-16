@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #080808;
+  --surface: #101010;
+  --surface-elevated: #151515;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --tx1: #f7f4ef;
+  --tx2: #aaa6a0;
+  --tx3: #6f6b67;
+  --red: #ff2626;
+  --red-dark: #d90808;
+  --red-soft: rgba(255, 38, 38, 0.12);
+  --green: #00b67a;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--tx1);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--tx1);
+  overflow-x: hidden;
+  selection-background-color: var(--red);
+  selection-color: #ffffff;
+}
+
+::selection {
+  background: #ff2626;
+  color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-luxury {
+    color: #f7f4ef;
+  }
+  .text-muted-custom {
+    color: #aaa6a0;
+  }
+  .bg-surface-custom {
+    background-color: #101010;
+  }
+  .border-subtle-custom {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Pause marquee on hover */
+.pause-on-hover:hover .marquee-inner {
+  animation-play-state: paused;
+}
