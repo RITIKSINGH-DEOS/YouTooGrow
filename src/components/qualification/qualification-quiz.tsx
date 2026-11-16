@@ -101,7 +101,7 @@ export function QualificationQuiz() {
   };
 
   return (
-    <section className="py-14 sm:py-18 md:py-20 relative overflow-hidden" id="strategy-call">
+    <section className="pt-12 sm:pt-16 md:pt-20 pb-6 sm:pb-8 md:pb-10 relative overflow-hidden" id="strategy-call">
       {/* Background Subtle Crimson Glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[380px] bg-[radial-gradient(ellipse_at_center,rgba(255,38,38,0.12)_0%,rgba(255,38,38,0.02)_55%,transparent_75%)] blur-[100px] pointer-events-none"
