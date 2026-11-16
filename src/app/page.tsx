@@ -2,6 +2,8 @@ import { Navbar } from "@/components/navigation/navbar";
 import { HeroSection } from "@/components/hero/hero-section";
 import { AgencyIntro } from "@/components/introduction/agency-intro";
 import { TrustMetrics } from "@/components/trust/trust-metrics";
+import { ServicesSection } from "@/components/services/services-section";
+import { HowWeWork } from "@/components/workflow/how-we-work";
 
 export default function HomePage() {
   return (
@@ -18,6 +20,12 @@ export default function HomePage() {
 
         {/* 4. Trust & Capabilities Strip */}
         <TrustMetrics />
+
+        {/* 5. Services Section (YouTube & Instagram) */}
+        <ServicesSection />
+
+        {/* 6. How We Work (01 to 06 Workflow Timeline) */}
+        <HowWeWork />
       </main>
 
       {/* Baseline footer */}
