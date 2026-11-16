@@ -158,7 +158,7 @@ export function ProcessSection() {
             return (
               <div
                 key={item.step}
-                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0f0f0f] to-[#0a0a0a] p-4.5 sm:p-6 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-2 min-h-0 sm:min-h-[370px] cursor-default"
+                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0f0f0f] to-[#0a0a0a] p-5 sm:p-6 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-2 min-h-0 sm:min-h-[370px] cursor-default"
               >
                 {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
                 <div
@@ -175,7 +175,7 @@ export function ProcessSection() {
                 <div className="relative z-10">
                   {/* Top Bar with Icon & Luxury Ghost Numeral */}
                   <div className="flex items-center justify-between mb-3 sm:mb-4">
-                    <div className="w-8.5 h-8.5 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/20 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white group-hover:shadow-[0_0_18px_rgba(255,38,38,0.5)] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/20 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white group-hover:shadow-[0_0_18px_rgba(255,38,38,0.5)] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
                     </div>
                     <span className="font-serif italic text-2xl sm:text-4xl font-normal text-white/[0.08] group-hover:text-[#ff2626]/35 group-hover:scale-105 transition-all duration-300 select-none">
