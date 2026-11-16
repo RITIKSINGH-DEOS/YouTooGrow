@@ -51,7 +51,7 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
           </span>
         </div>
 
-        {/* Master Headline (Image 1) */}
+        {/* Master Headline */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#f7f4ef] tracking-tight leading-[1.1] mb-3">
           Your Content Deserves{" "}
           <span className="block sm:inline font-serif italic font-normal text-[#ff2626]">
@@ -65,7 +65,7 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
           end-to-end channel management.
         </p>
 
-        {/* The Video Framework Card (Image 2 - Placed Directly Below Headline) */}
+        {/* The Video Framework Card */}
         <div className="relative aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/[0.09] bg-[#101010] shadow-[0_20px_50px_rgba(0,0,0,0.8)] group mb-8">
           {isPlaying && videoSrc ? (
             <iframe
@@ -109,22 +109,14 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
           )}
         </div>
 
-        {/* Action CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-8">
+        {/* Single Big High-Impact Action CTA */}
+        <div className="flex justify-center mb-8">
           <Link
             href="#contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#ff2626] hover:bg-[#d90808] text-white transition-all shadow-[0_0_20px_rgba(255,38,38,0.25)] group"
+            className="group relative inline-flex items-center justify-center gap-3 px-9 py-4 sm:px-14 sm:py-4.5 rounded-full text-sm sm:text-base font-bold uppercase tracking-wider bg-[#ff2626] hover:bg-[#d90808] text-white transition-all duration-300 shadow-[0_0_30px_rgba(255,38,38,0.35)] hover:shadow-[0_0_45px_rgba(255,38,38,0.6)] hover:scale-[1.02]"
           >
             <span>Book a Free Strategy Call</span>
-            <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </Link>
-
-          <Link
-            href="#proof"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-wider border border-white/[0.1] hover:border-white/25 bg-[#101010]/60 text-[#f7f4ef] transition-colors"
-          >
-            <Play className="w-3 h-3 text-[#ff2626] fill-[#ff2626]" />
-            <span>Explore Proof</span>
+            <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
           </Link>
         </div>
 
