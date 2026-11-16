@@ -52,13 +52,16 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
           </span>
         </div>
 
-        {/* Master Catchy 2-Line Headline with Radiant Gradient & Glow */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6 sm:mb-8">
+        {/* Master Catchy 3-Line Headline with Radiant Gradient & Glow */}
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.14] mb-6 sm:mb-8">
           <span className="block bg-gradient-to-b from-[#ffffff] via-[#f7f4ef] to-[#cfcac0] bg-clip-text text-transparent drop-shadow-sm">
-            Stop Chasing Empty Views.
+            We Grow Your Business Channel
           </span>
-          <span className="block font-serif italic font-normal bg-gradient-to-r from-[#ff4d4d] via-[#ff2626] to-[#e60000] bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,38,38,0.4)] mt-1">
-            We Turn Content Into Growth.
+          <span className="block bg-gradient-to-b from-[#ffffff] via-[#f7f4ef] to-[#cfcac0] bg-clip-text text-transparent drop-shadow-sm mt-1 sm:mt-1.5">
+            Completely Done-For-You.
+          </span>
+          <span className="block font-serif italic font-normal bg-gradient-to-r from-[#ff4d4d] via-[#ff2626] to-[#e60000] bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(255,38,38,0.4)] mt-2">
+            To Generate Endless Leads &amp; Growth.
           </span>
         </h1>
 
