@@ -52,19 +52,6 @@ export function CaseStudiesSection() {
     setActiveIndex(closestIndex);
   };
 
-  const scrollToCard = (index: number) => {
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const cards = container.querySelectorAll<HTMLElement>("[data-short-card]");
-    const targetCard = cards[index];
-    if (targetCard) {
-      const containerWidth = container.clientWidth;
-      const cardCenter = targetCard.offsetLeft + targetCard.offsetWidth / 2;
-      const targetScrollLeft = cardCenter - containerWidth / 2;
-      container.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       className="py-16 md:py-24 relative bg-[#090909] border-t border-white/[0.06] overflow-hidden"
@@ -96,13 +83,13 @@ export function CaseStudiesSection() {
             A curated showcase of retention-engineered vertical hooks, high-CTR framing, and algorithmically optimized Shorts & Reels produced by YouTooGrow.
           </p>
 
-          {/* Platform Filter Tabs with Smooth Animation */}
+          {/* Platform Filter Tabs */}
           <div className="mt-5 sm:mt-6 flex items-center p-1 sm:p-1.5 rounded-full bg-[#121212] border border-white/[0.08] gap-1 w-full max-w-[310px] min-[390px]:max-w-[330px] sm:max-w-none sm:w-auto mx-auto justify-between sm:justify-start shadow-inner">
             <button
               onClick={() => handlePlatformChange("ALL")}
               className={`flex-1 sm:flex-initial flex items-center justify-center px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
                 activePlatform === "ALL"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)] scale-[1.02]"
+                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
@@ -113,7 +100,7 @@ export function CaseStudiesSection() {
               onClick={() => handlePlatformChange("YouTube")}
               className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
                 activePlatform === "YouTube"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)] scale-[1.02]"
+                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
@@ -125,7 +112,7 @@ export function CaseStudiesSection() {
               onClick={() => handlePlatformChange("Instagram")}
               className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
                 activePlatform === "Instagram"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)] scale-[1.02]"
+                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
                   : "text-[#8f8b85] hover:text-white"
               }`}
             >
@@ -136,12 +123,12 @@ export function CaseStudiesSection() {
           </div>
         </div>
 
-        {/* Video Cards Showcase: Mobile Cover Flow Focus / Desktop 4-Column Grid */}
+        {/* Video Cards Showcase: Mobile Horizontal Carousel / Desktop 4-Column Grid */}
         <div
           key={activePlatform}
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 pt-2 px-[calc((100%-260px)/2)] min-[390px]:px-[calc((100%-275px)/2)] sm:px-0 sm:mx-0 transition-all duration-400 ease-out animate-in fade-in-0 slide-in-from-bottom-2 items-center"
+          className="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 pt-1 px-6 -mx-6 sm:px-0 sm:mx-0 transition-all duration-400 ease-out animate-in fade-in-0 slide-in-from-bottom-2"
         >
           {filteredShorts.map((item, idx) => {
             const isYoutube = item.platform === "YouTube";
@@ -151,24 +138,16 @@ export function CaseStudiesSection() {
               <div
                 key={item.id}
                 data-short-card
-                onClick={() => {
-                  if (typeof window !== "undefined" && window.innerWidth < 640 && !isCenter) {
-                    scrollToCard(idx);
-                  } else {
-                    setSelectedShort(item);
-                  }
-                }}
-                className={`relative rounded-2xl border bg-gradient-to-b from-[#131313] via-[#0d0d0d] to-[#070707] transition-all duration-500 ease-out group overflow-hidden flex flex-col justify-between aspect-[9/16] w-[260px] min-[390px]:w-[275px] sm:w-full shrink-0 sm:shrink snap-center sm:snap-align-none cursor-pointer ${
+                onClick={() => setSelectedShort(item)}
+                className={`relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0d0d0d] to-[#070707] shadow-[0_15px_40px_rgba(0,0,0,0.6)] hover:shadow-[0_20px_50px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-1.5 transition-all duration-300 group overflow-hidden flex flex-col justify-between aspect-[9/16] w-[260px] min-[390px]:w-[280px] sm:w-full shrink-0 sm:shrink snap-center sm:snap-align-none cursor-pointer ${
                   isCenter
-                    ? "border-white/[0.16] shadow-[0_20px_50px_rgba(0,0,0,0.85)] scale-100 opacity-100 blur-none z-10 sm:border-white/[0.08]"
-                    : "border-white/[0.04] shadow-[0_10px_25px_rgba(0,0,0,0.5)] scale-[0.92] opacity-40 blur-[2.5px] sm:blur-none sm:opacity-100 sm:scale-100 sm:border-white/[0.08]"
-                } hover:border-[#ff2626]/60 hover:shadow-[0_20px_50px_-10px_rgba(255,38,38,0.25)] sm:hover:-translate-y-1.5`}
+                    ? "blur-none opacity-100"
+                    : "blur-[2px] opacity-75 sm:blur-none sm:opacity-100"
+                }`}
               >
-                {/* Top Subtle Crimson Radiant Accent Beam on Hover / Center */}
+                {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
                 <div
-                  className={`absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent transition-opacity duration-300 shadow-[0_0_12px_#ff2626] z-20 ${
-                    isCenter ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                  }`}
+                  className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_12px_#ff2626] z-20"
                   aria-hidden="true"
                 />
 
@@ -249,22 +228,6 @@ export function CaseStudiesSection() {
               </div>
             );
           })}
-        </div>
-
-        {/* Mobile Minimal Active Dots */}
-        <div className="sm:hidden flex items-center justify-center gap-1.5 mt-3">
-          {filteredShorts.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => scrollToCard(idx)}
-              aria-label={`Go to video ${idx + 1}`}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                idx === activeIndex
-                  ? "w-6 bg-[#ff2626] shadow-[0_0_8px_#ff2626]"
-                  : "w-1.5 bg-white/20 hover:bg-white/40"
-              }`}
-            />
-          ))}
         </div>
       </div>
 
