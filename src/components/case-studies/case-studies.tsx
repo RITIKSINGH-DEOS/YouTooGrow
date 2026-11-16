@@ -80,43 +80,60 @@ export function CaseStudiesSection() {
             </span>
           </h2>
 
-          {/* Platform Filter Tabs */}
-          <div className="mt-5 sm:mt-6 flex items-center p-1 sm:p-1.5 rounded-full bg-[#121212] border border-white/[0.08] gap-1 w-full max-w-[310px] min-[390px]:max-w-[330px] sm:max-w-none sm:w-auto mx-auto justify-between sm:justify-start shadow-inner">
-            <button
-              onClick={() => handlePlatformChange("ALL")}
-              className={`flex-1 sm:flex-initial flex items-center justify-center px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
-                activePlatform === "ALL"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
-                  : "text-[#8f8b85] hover:text-white"
-              }`}
-            >
-              <span className="sm:hidden">All ({featuredShorts.length})</span>
-              <span className="hidden sm:inline">All Assets ({featuredShorts.length})</span>
-            </button>
-            <button
-              onClick={() => handlePlatformChange("YouTube")}
-              className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
-                activePlatform === "YouTube"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
-                  : "text-[#8f8b85] hover:text-white"
-              }`}
-            >
-              <Youtube className="w-3.5 h-3.5 shrink-0" />
-              <span className="sm:hidden">Shorts</span>
-              <span className="hidden sm:inline">YouTube Shorts</span>
-            </button>
-            <button
-              onClick={() => handlePlatformChange("Instagram")}
-              className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 sm:px-5 py-2 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-300 ease-out ${
-                activePlatform === "Instagram"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_15px_rgba(255,38,38,0.5)]"
-                  : "text-[#8f8b85] hover:text-white"
-              }`}
-            >
-              <Instagram className="w-3.5 h-3.5 shrink-0" />
-              <span className="sm:hidden">Reels</span>
-              <span className="hidden sm:inline">Instagram Reels</span>
-            </button>
+          {/* Platform Filter Tabs with Smooth Animated Sliding Indicator */}
+          <div className="relative mt-5 sm:mt-6 p-1 sm:p-1.5 rounded-full bg-[#121212] border border-white/[0.08] w-full max-w-[310px] min-[390px]:max-w-[330px] sm:w-[480px] sm:max-w-none mx-auto shadow-inner overflow-hidden">
+            {/* Sliding Red Pill Indicator */}
+            <div
+              className="absolute top-1 sm:top-1.5 bottom-1 sm:bottom-1.5 left-1 sm:left-1.5 w-[calc((100%-8px)/3)] sm:w-[calc((100%-12px)/3)] rounded-full bg-[#ff2626] transition-transform duration-300 ease-out shadow-[0_0_18px_rgba(255,38,38,0.5)] pointer-events-none"
+              style={{
+                transform:
+                  activePlatform === "YouTube"
+                    ? "translateX(100%)"
+                    : activePlatform === "Instagram"
+                    ? "translateX(200%)"
+                    : "translateX(0%)",
+              }}
+              aria-hidden="true"
+            />
+
+            {/* Tab Buttons */}
+            <div className="relative z-10 grid grid-cols-3 w-full">
+              <button
+                onClick={() => handlePlatformChange("ALL")}
+                className={`flex items-center justify-center py-2 sm:py-2.5 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-colors duration-200 ${
+                  activePlatform === "ALL"
+                    ? "text-white"
+                    : "text-[#8f8b85] hover:text-white"
+                }`}
+              >
+                <span className="sm:hidden">All ({featuredShorts.length})</span>
+                <span className="hidden sm:inline">All Assets ({featuredShorts.length})</span>
+              </button>
+              <button
+                onClick={() => handlePlatformChange("YouTube")}
+                className={`flex items-center justify-center gap-1.5 py-2 sm:py-2.5 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-colors duration-200 ${
+                  activePlatform === "YouTube"
+                    ? "text-white"
+                    : "text-[#8f8b85] hover:text-white"
+                }`}
+              >
+                <Youtube className="w-3.5 h-3.5 shrink-0" />
+                <span className="sm:hidden">Shorts</span>
+                <span className="hidden sm:inline">YouTube Shorts</span>
+              </button>
+              <button
+                onClick={() => handlePlatformChange("Instagram")}
+                className={`flex items-center justify-center gap-1.5 py-2 sm:py-2.5 rounded-full text-[10.5px] min-[360px]:text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-colors duration-200 ${
+                  activePlatform === "Instagram"
+                    ? "text-white"
+                    : "text-[#8f8b85] hover:text-white"
+                }`}
+              >
+                <Instagram className="w-3.5 h-3.5 shrink-0" />
+                <span className="sm:hidden">Reels</span>
+                <span className="hidden sm:inline">Instagram Reels</span>
+              </button>
+            </div>
           </div>
         </div>
 
