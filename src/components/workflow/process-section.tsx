@@ -112,8 +112,8 @@ export function ProcessSection() {
         </div>
 
         {/* Stable Non-Shifting Platform Switcher with Smooth Slider Indicator */}
-        <div className="flex items-center justify-center mb-10">
-          <div className="relative inline-flex p-1 rounded-full border border-white/[0.08] bg-[#101010] shadow-inner select-none">
+        <div className="flex items-center justify-center mb-8 sm:mb-10 px-4">
+          <div className="relative inline-flex p-1 rounded-full border border-white/[0.08] bg-[#101010] shadow-inner select-none max-w-full">
             {/* Sliding Red Active Background Pill */}
             <div
               className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-[#ff2626] shadow-[0_0_25px_rgba(255,38,38,0.45)] transition-all duration-300 ease-out ${
@@ -125,24 +125,24 @@ export function ProcessSection() {
             <button
               type="button"
               onClick={() => setActiveTab("youtube")}
-              className={`relative z-10 flex items-center justify-center gap-2 w-40 sm:w-48 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
+              className={`relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 w-[140px] min-[390px]:w-[155px] sm:w-48 py-2 sm:py-2.5 rounded-full text-[10px] min-[390px]:text-[11px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-wider whitespace-nowrap transition-colors duration-200 ${
                 activeTab === "youtube" ? "text-white" : "text-[#aaa6a0] hover:text-white"
               }`}
               aria-pressed={activeTab === "youtube"}
             >
-              <Youtube className="w-4 h-4 shrink-0" />
+              <Youtube className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               <span>YouTube Process</span>
             </button>
 
             <button
               type="button"
               onClick={() => setActiveTab("instagram")}
-              className={`relative z-10 flex items-center justify-center gap-2 w-40 sm:w-48 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
+              className={`relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 w-[140px] min-[390px]:w-[155px] sm:w-48 py-2 sm:py-2.5 rounded-full text-[10px] min-[390px]:text-[11px] sm:text-xs font-bold uppercase tracking-tight sm:tracking-wider whitespace-nowrap transition-colors duration-200 ${
                 activeTab === "instagram" ? "text-white" : "text-[#aaa6a0] hover:text-white"
               }`}
               aria-pressed={activeTab === "instagram"}
             >
-              <Instagram className="w-4 h-4 shrink-0" />
+              <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               <span>Instagram Process</span>
             </button>
           </div>
@@ -158,7 +158,7 @@ export function ProcessSection() {
             return (
               <div
                 key={item.step}
-                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0f0f0f] to-[#0a0a0a] p-6 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-2 min-h-[350px] sm:min-h-[370px] cursor-default"
+                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0f0f0f] to-[#0a0a0a] p-5 sm:p-6 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-2 min-h-0 sm:min-h-[370px] cursor-default"
               >
                 {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
                 <div
@@ -174,33 +174,33 @@ export function ProcessSection() {
 
                 <div className="relative z-10">
                   {/* Top Bar with Icon & Luxury Ghost Numeral */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/20 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white group-hover:shadow-[0_0_18px_rgba(255,38,38,0.5)] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
-                      <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/20 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white group-hover:shadow-[0_0_18px_rgba(255,38,38,0.5)] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
                     </div>
-                    <span className="font-serif italic text-3xl sm:text-4xl font-normal text-white/[0.08] group-hover:text-[#ff2626]/35 group-hover:scale-105 transition-all duration-300 select-none">
+                    <span className="font-serif italic text-2xl sm:text-4xl font-normal text-white/[0.08] group-hover:text-[#ff2626]/35 group-hover:scale-105 transition-all duration-300 select-none">
                       {item.step}
                     </span>
                   </div>
 
                   {/* Stage Micro-Badge */}
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff2626] block mb-1.5">
+                  <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff2626] block mb-1 sm:mb-1.5">
                     {item.stageBadge}
                   </span>
 
-                  {/* Step Title with Harmonized Min-Height */}
-                  <h3 className="text-base sm:text-lg font-bold text-[#f7f4ef] group-hover:text-white transition-colors mb-2.5 tracking-tight leading-snug min-h-[48px] flex items-start">
+                  {/* Step Title with Harmonized Min-Height on Desktop */}
+                  <h3 className="text-sm sm:text-lg font-bold text-[#f7f4ef] group-hover:text-white transition-colors mb-1.5 sm:mb-2.5 tracking-tight leading-snug min-h-0 sm:min-h-[48px] flex items-start">
                     {item.title}
                   </h3>
 
-                  {/* Step Description with Harmonized Min-Height */}
-                  <p className="text-xs sm:text-sm text-[#aaa6a0] leading-relaxed min-h-[72px]">
+                  {/* Step Description with Harmonized Min-Height on Desktop */}
+                  <p className="text-xs sm:text-sm text-[#aaa6a0] leading-relaxed min-h-0 sm:min-h-[72px]">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Deliverable Footer Anchor */}
-                <div className="relative z-10 pt-3.5 border-t border-white/[0.06] flex items-center gap-2 text-[11px] text-[#8f8b85] group-hover:text-[#cfcac0] transition-colors mt-4">
+                <div className="relative z-10 pt-2.5 sm:pt-3.5 border-t border-white/[0.06] flex items-center gap-2 text-[10.5px] sm:text-[11px] text-[#8f8b85] group-hover:text-[#cfcac0] transition-colors mt-3 sm:mt-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b67a] shrink-0 shadow-[0_0_6px_#00b67a]" />
                   <span className="font-medium truncate">{item.deliverable}</span>
                 </div>
