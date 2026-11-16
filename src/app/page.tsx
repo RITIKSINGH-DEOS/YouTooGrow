@@ -3,7 +3,6 @@ import { PlatformLogos } from "@/components/trust/platform-logos";
 import { ProcessSection } from "@/components/workflow/process-section";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
 import { CaseStudiesSection } from "@/components/case-studies/case-studies";
-import { WhyChooseUs } from "@/components/advantages/why-choose-us";
 import { TestimonialsSection } from "@/components/testimonials/testimonials";
 import { BookingCTA } from "@/components/contact/booking-cta";
 import { Footer } from "@/components/navigation/footer";
@@ -24,20 +23,17 @@ export default function HomePage() {
         {/* 4. Proof in Motion (Wall of Wins Infinite Marquee) */}
         <ProofInMotion />
 
-        {/* 6. Case Studies Section */}
+        {/* 5. Case Studies Section */}
         <CaseStudiesSection />
 
-        {/* 7. Why Choose YouTooGrow (5 Core Pillars) */}
-        <WhyChooseUs />
-
-        {/* 8. Testimonials Section */}
+        {/* 6. Testimonials Section */}
         <TestimonialsSection />
 
-        {/* 9. Final CTA & Lead Booking */}
+        {/* 7. Final CTA & Lead Booking */}
         <BookingCTA />
       </main>
 
-      {/* 10. Footer */}
+      {/* 8. Footer */}
       <Footer />
     </div>
   );
