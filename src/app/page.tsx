@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/hero/hero-section";
 import { PlatformLogos } from "@/components/trust/platform-logos";
+import { QualificationQuiz } from "@/components/qualification/qualification-quiz";
 import { ProcessSection } from "@/components/workflow/process-section";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
 import { CaseStudiesSection } from "@/components/case-studies/case-studies";
@@ -17,7 +18,10 @@ export default function HomePage() {
         {/* 2. Platforms & Production Ecosystem Logos Ticker */}
         <PlatformLogos />
 
-        {/* 3. The Process: You Record. We Handle Everything Else. (YouTube & Instagram) */}
+        {/* 3. Interactive Priority Qualification Quiz */}
+        <QualificationQuiz />
+
+        {/* 4. The Process: You Record. We Handle Everything Else. (YouTube & Instagram) */}
         <ProcessSection />
 
         {/* 4. Proof in Motion (Wall of Wins Infinite Marquee) */}

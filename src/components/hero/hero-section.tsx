@@ -123,7 +123,7 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
         {/* Single Big High-Impact Action CTA */}
         <div className="flex justify-center">
           <Link
-            href="#contact"
+            href="#strategy-call"
             className="group relative inline-flex items-center justify-center gap-2.5 px-8 py-2.5 sm:px-10 sm:py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider bg-[#ff2626] hover:bg-[#d90808] text-white transition-all duration-300 shadow-[0_0_25px_rgba(255,38,38,0.4)] hover:shadow-[0_0_40px_rgba(255,38,38,0.6)] hover:scale-[1.02]"
           >
             <span>Book a Free Strategy Call</span>
