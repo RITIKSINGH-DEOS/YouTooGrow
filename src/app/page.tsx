@@ -6,6 +6,10 @@ import { ServicesSection } from "@/components/services/services-section";
 import { HowWeWork } from "@/components/workflow/how-we-work";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
 import { CaseStudiesSection } from "@/components/case-studies/case-studies";
+import { WhyChooseUs } from "@/components/advantages/why-choose-us";
+import { TestimonialsSection } from "@/components/testimonials/testimonials";
+import { BookingCTA } from "@/components/contact/booking-cta";
+import { Footer } from "@/components/navigation/footer";
 
 export default function HomePage() {
   return (
@@ -17,10 +21,10 @@ export default function HomePage() {
         {/* 2. Hero Section */}
         <HeroSection />
 
-        {/* 3. Agency Introduction (Video-ready landscape frame) */}
+        {/* 3. Agency Introduction (Video-Ready Landscape Frame) */}
         <AgencyIntro />
 
-        {/* 4. Trust & Capabilities Strip */}
+        {/* 4. Social Proof / Trust Section */}
         <TrustMetrics />
 
         {/* 5. Services Section (YouTube & Instagram) */}
@@ -34,12 +38,19 @@ export default function HomePage() {
 
         {/* 8. Case Studies Section */}
         <CaseStudiesSection />
+
+        {/* 9. Why Choose YouTooGrow (5 Core Pillars) */}
+        <WhyChooseUs />
+
+        {/* 10. Testimonials Section */}
+        <TestimonialsSection />
+
+        {/* 11. Final CTA & Lead Booking */}
+        <BookingCTA />
       </main>
 
-      {/* Baseline footer */}
-      <footer className="py-8 border-t border-white/[0.06] text-center text-xs text-[#aaa6a0]">
-        YouTooGrow &copy; {new Date().getFullYear()} &bull; We Turn Content Into Growth.
-      </footer>
+      {/* 12. Footer */}
+      <Footer />
     </div>
   );
 }
