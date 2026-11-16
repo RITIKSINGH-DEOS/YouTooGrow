@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Play, CheckCircle2, TrendingUp, Sparkles, X } from "lucide-react";
 
 interface HeroSectionProps {
@@ -65,8 +66,8 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
           end-to-end channel management.
         </p>
 
-        {/* The Video Framework Card */}
-        <div className="relative aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/[0.09] bg-[#101010] shadow-[0_20px_50px_rgba(0,0,0,0.8)] group mb-8">
+        {/* The Video Framework Card with Real Founder Studio Photo */}
+        <div className="relative aspect-video max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/[0.12] bg-[#101010] shadow-[0_25px_60px_rgba(0,0,0,0.85)] group mb-8">
           {isPlaying && videoSrc ? (
             <iframe
               src={videoSrc}
@@ -76,33 +77,44 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
               allowFullScreen
             />
           ) : (
-            <div className="absolute inset-0 bg-gradient-to-br from-[#141414] via-[#0f0f0f] to-[#0a0a0a] flex flex-col items-center justify-center p-6 text-center">
-              {/* Dot Grid */}
+            <div className="relative w-full h-full">
+              {/* Founder Studio Photo */}
+              <Image
+                src="/images/introduction/founder-intro.jpg"
+                alt="YouTooGrow Founder"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover object-top sm:object-center group-hover:scale-105 transition-transform duration-700 brightness-[0.85] contrast-[1.05]"
+              />
+
+              {/* Cinematic Vignette Overlays */}
               <div
-                className="absolute inset-0 opacity-15 bg-[radial-gradient(#ff2626_1px,transparent_1px)] [background-size:20px_20px]"
+                className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/40 pointer-events-none"
                 aria-hidden="true"
               />
 
-              <div className="relative z-10 space-y-3">
+              {/* Center Play Button & Framework Text */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center z-10">
                 <button
                   type="button"
                   onClick={handlePlayClick}
-                  className="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-full bg-[#ff2626] border border-[#ff2626]/40 flex items-center justify-center hover:scale-110 hover:bg-[#d90808] text-white transition-all duration-300 shadow-[0_0_30px_rgba(255,38,38,0.4)] focus:outline-none"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#ff2626] border border-white/20 flex items-center justify-center hover:scale-110 hover:bg-[#d90808] text-white transition-all duration-300 shadow-[0_0_35px_rgba(255,38,38,0.5)] focus:outline-none mb-3"
                   aria-label="Play introduction video"
                 >
                   <Play className="w-6 h-6 fill-current ml-0.5" />
                 </button>
-                <h3 className="text-lg sm:text-xl font-bold text-[#f7f4ef] tracking-tight">
+                <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight drop-shadow-md">
                   The YouTooGrow Framework
                 </h3>
-                <p className="text-xs text-[#aaa6a0] max-w-xs mx-auto">
+                <p className="text-xs text-[#f7f4ef]/80 max-w-xs mx-auto drop-shadow-sm">
                   Click to view our production lifecycle &amp; workflow walk-through.
                 </p>
               </div>
 
               {/* Card Footer Bar */}
-              <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-between text-[11px] text-[#6f6b67] z-10">
-                <span className="font-medium text-white/80">YouTooGrow Content Operations</span>
+              <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4 bg-gradient-to-t from-black/90 to-transparent flex items-center justify-between text-[11px] text-[#aaa6a0] z-10">
+                <span className="font-medium text-white/90">YouTooGrow Content Operations</span>
                 <span>Research &bull; Production &bull; Optimization</span>
               </div>
             </div>
