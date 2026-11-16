@@ -9,7 +9,7 @@ export function ProofInMotion() {
   const instagramLoop = [...instagramProofItems, ...instagramProofItems];
 
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden" id="proof">
+    <section className="pt-6 pb-16 sm:pt-8 sm:pb-20 md:pt-10 md:pb-24 relative overflow-hidden" id="proof">
       {/* Background Soft Glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[#ff2626]/[0.03] rounded-full blur-[120px] pointer-events-none"

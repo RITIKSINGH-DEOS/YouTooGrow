@@ -98,7 +98,7 @@ export function ProcessSection() {
   const steps = activeTab === "youtube" ? youtubeProcessSteps : instagramProcessSteps;
 
   return (
-    <section className="py-16 md:py-24 relative bg-[#080808]" id="services">
+    <section className="pt-14 pb-8 sm:pt-16 sm:pb-10 md:pt-20 md:pb-10 relative bg-[#080808]" id="services">
       <div id="workflow" className="sr-only" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
