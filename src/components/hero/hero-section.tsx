@@ -22,7 +22,7 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-8 pb-12 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 overflow-hidden">
+    <section className="relative pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16 overflow-hidden">
       {/* Cinematic Ambient Glow Behind Headline */}
       <div
         className="absolute top-28 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[radial-gradient(ellipse_at_center,rgba(255,38,38,0.14)_0%,rgba(255,38,38,0.02)_50%,transparent_75%)] blur-[90px] pointer-events-none"
