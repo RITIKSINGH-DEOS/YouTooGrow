@@ -63,8 +63,8 @@ const instagramProcessSteps: ProcessStep[] = [
     step: "01",
     stageBadge: "Stage 01",
     icon: Sparkles,
-    title: "Audio & Trend Discovery",
-    description: "We identify rising viral audio patterns, visual formats, and high-converting competitor hooks before saturation.",
+    title: "Audio & Viral Trend Discovery",
+    description: "We identify rising viral audio patterns, visual formats, and high-converting competitor hooks before market saturation.",
     deliverable: "Weekly Viral Trend Matrix",
   },
   {
@@ -72,7 +72,7 @@ const instagramProcessSteps: ProcessStep[] = [
     stageBadge: "Stage 02",
     icon: Mic,
     title: "Batch Script Frameworks",
-    description: "We script 30-day Reel calendars with 3-second visual hooks structured for rapid 60-minute batch recording sessions.",
+    description: "We script 30-day Reel calendars with 3-second visual hooks structured for rapid, high-yield batch recording sessions.",
     deliverable: "30-Day Batch Script Deck",
   },
   {
@@ -88,7 +88,7 @@ const instagramProcessSteps: ProcessStep[] = [
     stageBadge: "Stage 04",
     icon: MessageSquare,
     title: "Peak Distribution & Funnels",
-    description: "We schedule peak-hour distribution, optimize hashtag indexing, and build ManyChat DM keyword conversion funnels.",
+    description: "We schedule peak-hour distribution, optimize hashtag indexing, and engineer automated ManyChat DM lead funnels.",
     deliverable: "Automated DM Lead Funnel Integration",
   },
 ];
@@ -111,58 +111,74 @@ export function ProcessSection() {
           </h2>
         </div>
 
-        {/* Minimal Platform Switcher for YouTube & Instagram */}
+        {/* Stable Non-Shifting Platform Switcher with Smooth Slider Indicator */}
         <div className="flex items-center justify-center mb-10">
-          <div className="inline-flex p-1 rounded-full border border-white/[0.08] bg-[#101010]">
+          <div className="relative inline-flex p-1 rounded-full border border-white/[0.08] bg-[#101010] shadow-inner select-none">
+            {/* Sliding Red Active Background Pill */}
+            <div
+              className={`absolute top-1 bottom-1 w-[calc(50%-4px)] rounded-full bg-[#ff2626] shadow-[0_0_25px_rgba(255,38,38,0.45)] transition-all duration-300 ease-out ${
+                activeTab === "youtube" ? "left-1" : "left-[calc(50%+2px)]"
+              }`}
+              aria-hidden="true"
+            />
+
             <button
               type="button"
               onClick={() => setActiveTab("youtube")}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
-                activeTab === "youtube"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_20px_rgba(255,38,38,0.35)]"
-                  : "text-[#aaa6a0] hover:text-[#f7f4ef]"
+              className={`relative z-10 flex items-center justify-center gap-2 w-40 sm:w-48 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
+                activeTab === "youtube" ? "text-white" : "text-[#aaa6a0] hover:text-white"
               }`}
+              aria-pressed={activeTab === "youtube"}
             >
-              <Youtube className="w-3.5 h-3.5" />
+              <Youtube className="w-4 h-4 shrink-0" />
               <span>YouTube Process</span>
             </button>
+
             <button
               type="button"
               onClick={() => setActiveTab("instagram")}
-              className={`flex items-center gap-2 px-5 py-2 rounded-full text-xs font-semibold transition-all duration-200 ${
-                activeTab === "instagram"
-                  ? "bg-[#ff2626] text-white shadow-[0_0_20px_rgba(255,38,38,0.35)]"
-                  : "text-[#aaa6a0] hover:text-[#f7f4ef]"
+              className={`relative z-10 flex items-center justify-center gap-2 w-40 sm:w-48 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
+                activeTab === "instagram" ? "text-white" : "text-[#aaa6a0] hover:text-white"
               }`}
+              aria-pressed={activeTab === "instagram"}
             >
-              <Instagram className="w-3.5 h-3.5" />
+              <Instagram className="w-4 h-4 shrink-0" />
               <span>Instagram Process</span>
             </button>
           </div>
         </div>
 
-        {/* 4 Bespoke Redesigned Process Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* 4 Identical-Size Cards with Smooth Fade-and-Slide Tab Transition */}
+        <div
+          key={activeTab}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 transition-all duration-500 ease-out animate-in fade-in-0 slide-in-from-bottom-3"
+        >
           {steps.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.step}
-                className="relative rounded-2xl border border-white/[0.08] bg-gradient-to-b from-[#131313] via-[#0f0f0f] to-[#0a0a0a] p-6 hover:border-[#ff2626]/40 transition-all duration-300 flex flex-col justify-between group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(255,38,38,0.12)]"
+                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0f0f0f] to-[#0a0a0a] p-6 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-2 min-h-[350px] sm:min-h-[370px] cursor-default"
               >
-                {/* Top Subtle Crimson Radiant Accent Beam */}
+                {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
                 <div
-                  className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff2626]/0 to-transparent group-hover:via-[#ff2626] transition-all duration-500"
+                  className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_12px_#ff2626]"
                   aria-hidden="true"
                 />
 
-                <div>
+                {/* Ambient Backlight Glow on Card Top on Hover */}
+                <div
+                  className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-32 bg-[#ff2626]/0 group-hover:bg-[#ff2626]/12 rounded-full blur-2xl transition-all duration-500 pointer-events-none"
+                  aria-hidden="true"
+                />
+
+                <div className="relative z-10">
                   {/* Top Bar with Icon & Luxury Ghost Numeral */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/20 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white transition-all duration-300 shadow-sm shrink-0">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
+                    <div className="w-10 h-10 rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/20 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white group-hover:shadow-[0_0_18px_rgba(255,38,38,0.5)] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+                      <Icon className="w-5 h-5 transition-transform group-hover:scale-110" />
                     </div>
-                    <span className="font-serif italic text-3xl sm:text-4xl font-normal text-white/[0.08] group-hover:text-[#ff2626]/30 transition-colors select-none">
+                    <span className="font-serif italic text-3xl sm:text-4xl font-normal text-white/[0.08] group-hover:text-[#ff2626]/35 group-hover:scale-105 transition-all duration-300 select-none">
                       {item.step}
                     </span>
                   </div>
@@ -172,19 +188,19 @@ export function ProcessSection() {
                     {item.stageBadge}
                   </span>
 
-                  {/* Step Title */}
-                  <h3 className="text-base sm:text-lg font-bold text-[#f7f4ef] group-hover:text-white transition-colors mb-2.5 tracking-tight leading-snug">
+                  {/* Step Title with Harmonized Min-Height */}
+                  <h3 className="text-base sm:text-lg font-bold text-[#f7f4ef] group-hover:text-white transition-colors mb-2.5 tracking-tight leading-snug min-h-[48px] flex items-start">
                     {item.title}
                   </h3>
 
-                  {/* Step Description */}
-                  <p className="text-xs sm:text-sm text-[#aaa6a0] leading-relaxed mb-5">
+                  {/* Step Description with Harmonized Min-Height */}
+                  <p className="text-xs sm:text-sm text-[#aaa6a0] leading-relaxed min-h-[72px]">
                     {item.description}
                   </p>
                 </div>
 
                 {/* Deliverable Footer Anchor */}
-                <div className="pt-3.5 border-t border-white/[0.06] flex items-center gap-2 text-[11px] text-[#8f8b85] group-hover:text-[#cfcac0] transition-colors">
+                <div className="relative z-10 pt-3.5 border-t border-white/[0.06] flex items-center gap-2 text-[11px] text-[#8f8b85] group-hover:text-[#cfcac0] transition-colors mt-4">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00b67a] shrink-0 shadow-[0_0_6px_#00b67a]" />
                   <span className="font-medium truncate">{item.deliverable}</span>
                 </div>
