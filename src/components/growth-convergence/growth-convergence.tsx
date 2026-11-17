@@ -118,21 +118,22 @@ export function GrowthConvergence() {
           {/* ============================================================ */}
           {/* TOP CENTRAL CONVERGENCE ACTION: CIRCULAR BOOK A CALL BUTTON */}
           {/* Revealing only when curves converge at the peak (step >= 3) */}
+          {/* Balanced glow: refined, cinematic, and glare-free          */}
           {/* ============================================================ */}
           <div className="absolute top-[96px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
             <Link
               href="mailto:contact@youtoogrow.com?subject=Strategy%20Call%20Application%20-%20YouTooGrow"
-              className={`group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-b from-[#ff3838] via-[#ff2626] to-[#c70505] text-white shadow-[0_0_35px_rgba(255,38,38,0.65),0_0_70px_rgba(255,38,38,0.3),inset_0_2px_4px_rgba(255,255,255,0.35),inset_0_-4px_8px_rgba(0,0,0,0.45)] hover:shadow-[0_0_60px_rgba(255,38,38,0.95),0_0_100px_rgba(255,38,38,0.5),inset_0_2px_4px_rgba(255,255,255,0.5)] hover:scale-105 active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
+              className={`group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-b from-[#f83232] via-[#e61919] to-[#b30808] text-white shadow-[0_0_22px_rgba(255,38,38,0.35),0_6px_20px_rgba(0,0,0,0.6),inset_0_2px_3px_rgba(255,255,255,0.3),inset_0_-3px_6px_rgba(0,0,0,0.5)] hover:shadow-[0_0_32px_rgba(255,38,38,0.55),0_8px_25px_rgba(0,0,0,0.7),inset_0_2px_3px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
                 step >= 3
                   ? "scale-100 opacity-100 pointer-events-auto"
                   : "scale-50 opacity-0 pointer-events-none"
               }`}
             >
               {/* Inner decorative concentric border ring */}
-              <div className="absolute inset-1.5 sm:inset-2 rounded-full border border-white/25 pointer-events-none" />
+              <div className="absolute inset-1.5 sm:inset-2 rounded-full border border-white/20 pointer-events-none" />
 
               {/* Top subtle highlight reflection */}
-              <div className="absolute top-2 w-8 sm:w-10 h-3 bg-white/30 rounded-full blur-[1px] pointer-events-none" />
+              <div className="absolute top-2 w-8 sm:w-10 h-2.5 bg-white/25 rounded-full blur-[1px] pointer-events-none" />
 
               {/* Text: BOOK A CALL */}
               <div className="flex flex-col items-center justify-center text-center leading-[1.15] select-none z-10">
@@ -153,10 +154,10 @@ export function GrowthConvergence() {
             aria-hidden="true"
           >
             <defs>
-              {/* Sphere Ambient Radial Glow */}
+              {/* Sphere Ambient Radial Glow - Subdued & Balanced */}
               <radialGradient id="sphereRadialGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#ff2626" stopOpacity="0.5" />
-                <stop offset="50%" stopColor="#d90808" stopOpacity="0.25" />
+                <stop offset="0%" stopColor="#ff2626" stopOpacity="0.16" />
+                <stop offset="60%" stopColor="#ff2626" stopOpacity="0.04" />
                 <stop offset="100%" stopColor="#ff2626" stopOpacity="0" />
               </radialGradient>
 
@@ -186,11 +187,11 @@ export function GrowthConvergence() {
               </filter>
             </defs>
 
-            {/* Ambient Background Aura behind button */}
+            {/* Ambient Background Aura behind button (Balanced) */}
             <circle
               cx="600"
               cy="96"
-              r="120"
+              r="85"
               fill="url(#sphereRadialGlow)"
               className={`transition-all duration-1000 ${
                 step >= 3 ? "opacity-100 scale-100" : "opacity-0 scale-50"
@@ -209,8 +210,8 @@ export function GrowthConvergence() {
                 cy="96"
                 r="70"
                 fill="none"
-                stroke="rgba(255, 38, 38, 0.45)"
-                strokeWidth="1.2"
+                stroke="rgba(255, 38, 38, 0.28)"
+                strokeWidth="1"
                 className="animate-[spin_40s_linear_infinite]"
                 strokeDasharray="4 6"
               />
@@ -220,8 +221,8 @@ export function GrowthConvergence() {
                 cy="96"
                 r="95"
                 fill="none"
-                stroke="rgba(255, 255, 255, 0.22)"
-                strokeWidth="1"
+                stroke="rgba(255, 255, 255, 0.14)"
+                strokeWidth="0.8"
                 className="animate-[spin_55s_linear_infinite_reverse]"
                 strokeDasharray="3 5"
               />
@@ -231,8 +232,8 @@ export function GrowthConvergence() {
                 cy="96"
                 r="120"
                 fill="none"
-                stroke="rgba(255, 38, 38, 0.16)"
-                strokeWidth="0.8"
+                stroke="rgba(255, 38, 38, 0.10)"
+                strokeWidth="0.6"
                 strokeDasharray="2 6"
               />
             </g>
@@ -615,13 +616,13 @@ export function GrowthConvergence() {
             <div className="absolute top-[40px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
               <Link
                 href="mailto:contact@youtoogrow.com?subject=Strategy%20Call%20Application%20-%20YouTooGrow"
-                className={`group relative flex flex-col items-center justify-center w-20 h-20 rounded-full bg-gradient-to-b from-[#ff3838] via-[#ff2626] to-[#c70505] text-white shadow-[0_0_30px_rgba(255,38,38,0.65),inset_0_2px_3px_rgba(255,255,255,0.35)] hover:shadow-[0_0_45px_rgba(255,38,38,0.85)] active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
+                className={`group relative flex flex-col items-center justify-center w-20 h-20 rounded-full bg-gradient-to-b from-[#f83232] via-[#e61919] to-[#b30808] text-white shadow-[0_0_18px_rgba(255,38,38,0.35),0_4px_14px_rgba(0,0,0,0.6),inset_0_1.5px_2px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_0_26px_rgba(255,38,38,0.5),0_6px_18px_rgba(0,0,0,0.7)] active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
                   step >= 3
                     ? "scale-100 opacity-100 pointer-events-auto"
                     : "scale-50 opacity-0 pointer-events-none"
                 }`}
               >
-                <div className="absolute inset-1 rounded-full border border-white/25 pointer-events-none" />
+                <div className="absolute inset-1 rounded-full border border-white/20 pointer-events-none" />
                 <div className="flex flex-col items-center justify-center text-center leading-[1.15] select-none">
                   <span className="text-[10px] font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                     BOOK
@@ -645,11 +646,11 @@ export function GrowthConvergence() {
                 </linearGradient>
               </defs>
 
-              {/* Ambient radial glow at summit */}
+              {/* Ambient radial glow at summit (Balanced) */}
               <circle
                 cx="180"
                 cy="40"
-                r="60"
+                r="48"
                 fill="url(#sphereRadialGlow)"
                 className={`transition-all duration-1000 ${
                   step >= 3 ? "opacity-100 scale-100" : "opacity-0 scale-50"
