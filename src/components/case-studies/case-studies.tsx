@@ -54,7 +54,7 @@ export function CaseStudiesSection() {
 
   return (
     <section
-      className="py-16 md:py-24 relative bg-[#090909] border-t border-white/[0.06] overflow-hidden"
+      className="pt-14 sm:pt-16 md:pt-20 pb-6 sm:pb-8 md:pb-10 relative bg-[#090909] border-t border-white/[0.06] overflow-hidden"
       id="case-studies"
     >
       {/* Ambient Radial Glow */}

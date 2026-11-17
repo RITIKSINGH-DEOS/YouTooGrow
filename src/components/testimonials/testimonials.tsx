@@ -3,7 +3,7 @@ import { MessageSquareQuote, Star, CheckCircle } from "lucide-react";
 
 export function TestimonialsSection() {
   return (
-    <section className="py-16 md:py-24 relative bg-[#0a0a0a] border-t border-white/[0.06]" id="testimonials">
+    <section className="pt-6 sm:pt-8 md:pt-10 pb-16 md:pb-24 relative bg-[#0a0a0a] border-t border-white/[0.06]" id="testimonials">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
