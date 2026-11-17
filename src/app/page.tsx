@@ -2,11 +2,10 @@ import { HeroSection } from "@/components/hero/hero-section";
 import { PlatformLogos } from "@/components/trust/platform-logos";
 import { QualificationQuiz } from "@/components/qualification/qualification-quiz";
 import { ProcessSection } from "@/components/workflow/process-section";
-import { GrowthConvergence } from "@/components/growth-convergence/growth-convergence";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
 import { CaseStudiesSection } from "@/components/case-studies/case-studies";
 import { TestimonialsSection } from "@/components/testimonials/testimonials";
-import { BookingCTA } from "@/components/contact/booking-cta";
+import { GrowthConvergence } from "@/components/growth-convergence/growth-convergence";
 import { Footer } from "@/components/navigation/footer";
 
 export default function HomePage() {
@@ -25,23 +24,20 @@ export default function HomePage() {
         {/* 4. The Process: You Record. We Handle Everything Else. (YouTube & Instagram) */}
         <ProcessSection />
 
-        {/* 5. Animated Growth Visualization (Content Strategy + Creation = Exponential Growth) */}
-        <GrowthConvergence />
-
-        {/* 6. Proof in Motion (Wall of Wins Infinite Marquee) */}
+        {/* 5. Proof in Motion (Wall of Wins Infinite Marquee) */}
         <ProofInMotion />
 
-        {/* 7. Case Studies Section */}
+        {/* 6. Case Studies Section */}
         <CaseStudiesSection />
 
-        {/* 8. Testimonials Section */}
+        {/* 7. Testimonials Section */}
         <TestimonialsSection />
 
-        {/* 9. Final CTA & Lead Booking */}
-        <BookingCTA />
+        {/* 8. Animated Growth Convergence Engine (Replaces Final CTA) */}
+        <GrowthConvergence />
       </main>
 
-      {/* 10. Footer */}
+      {/* 9. Footer */}
       <Footer />
     </div>
   );

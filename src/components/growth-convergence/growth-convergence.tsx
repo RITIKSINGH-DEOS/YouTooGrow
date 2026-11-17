@@ -87,7 +87,7 @@ export function GrowthConvergence() {
     <section
       ref={sectionRef}
       className="relative bg-[#070709] py-16 md:py-24 overflow-hidden border-t border-white/[0.06] select-none"
-      id="growth-engine"
+      id="contact"
       aria-label="YouTooGrow Content Growth Engine"
     >
       {/* Background Ambience & Lighting - Brand Red & White Theme */}
