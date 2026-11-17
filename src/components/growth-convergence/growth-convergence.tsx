@@ -6,7 +6,6 @@ import {
   Video,
   Sparkles,
   TrendingUp,
-  RotateCcw,
 } from "lucide-react";
 
 export function GrowthConvergence() {
@@ -111,19 +110,6 @@ export function GrowthConvergence() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Replay Control Button */}
-        <div className="flex justify-end mb-2">
-          <button
-            onClick={startAnimation}
-            className="group inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] hover:bg-white/[0.07] border border-white/[0.08] hover:border-white/[0.18] text-[11px] text-[#aaa6a0] hover:text-white transition-all duration-200"
-            title="Replay convergence animation"
-            aria-label="Replay convergence animation"
-          >
-            <RotateCcw className="w-3 h-3 transition-transform duration-500 group-hover:-rotate-180 text-[#ff2626]" />
-            <span className="font-mono text-[10px] tracking-wider uppercase">Replay</span>
-          </button>
-        </div>
-
         {/* ============================================================== */}
         {/* DESKTOP & TABLET VIEWPORT (>= 768px)                          */}
         {/* Brand Red & White Aesthetic                                   */}
