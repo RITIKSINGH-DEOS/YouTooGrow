@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/hero/hero-section";
 import { PlatformLogos } from "@/components/trust/platform-logos";
 import { QualificationQuiz } from "@/components/qualification/qualification-quiz";
 import { ProcessSection } from "@/components/workflow/process-section";
+import { GrowthConvergence } from "@/components/growth-convergence/growth-convergence";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
 import { CaseStudiesSection } from "@/components/case-studies/case-studies";
 import { TestimonialsSection } from "@/components/testimonials/testimonials";
@@ -24,20 +25,23 @@ export default function HomePage() {
         {/* 4. The Process: You Record. We Handle Everything Else. (YouTube & Instagram) */}
         <ProcessSection />
 
-        {/* 4. Proof in Motion (Wall of Wins Infinite Marquee) */}
+        {/* 5. Animated Growth Visualization (Content Strategy + Creation = Exponential Growth) */}
+        <GrowthConvergence />
+
+        {/* 6. Proof in Motion (Wall of Wins Infinite Marquee) */}
         <ProofInMotion />
 
-        {/* 5. Case Studies Section */}
+        {/* 7. Case Studies Section */}
         <CaseStudiesSection />
 
-        {/* 6. Testimonials Section */}
+        {/* 8. Testimonials Section */}
         <TestimonialsSection />
 
-        {/* 7. Final CTA & Lead Booking */}
+        {/* 9. Final CTA & Lead Booking */}
         <BookingCTA />
       </main>
 
-      {/* 8. Footer */}
+      {/* 10. Footer */}
       <Footer />
     </div>
   );
