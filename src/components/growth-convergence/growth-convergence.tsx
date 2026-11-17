@@ -563,39 +563,6 @@ export function GrowthConvergence() {
           </svg>
 
           {/* ============================================================ */}
-          {/* CENTRAL HEADING (Revealed after convergence at step 3)       */}
-          {/* Red & White Luxury Palette                                  */}
-          {/* ============================================================ */}
-          <div
-            className={`absolute top-[175px] left-1/2 -translate-x-1/2 text-center w-full max-w-[480px] pointer-events-auto transition-all duration-800 ease-out ${
-              step >= 3
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-6 pointer-events-none"
-            }`}
-          >
-            {/* Brand Identifier */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-[#ff2626]/30 mb-2.5 shadow-[0_0_15px_rgba(255,38,38,0.15)]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2626] animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#ff4d4d] font-mono">
-                YOUTOOGROW
-              </span>
-            </div>
-
-            {/* Main Heading */}
-            <h2 className="text-3xl lg:text-[40px] font-extrabold text-white tracking-tight leading-[1.15] mb-2">
-              WE TURN CONTENT <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ff2626] via-[#ff4d4d] to-[#ffa3a3]">
-                INTO GROWTH.
-              </span>
-            </h2>
-
-            {/* Supporting Text */}
-            <p className="text-xs sm:text-[13px] tracking-[0.22em] font-semibold text-[#aaa6a0] uppercase">
-              LET&apos;S GROW TOGETHER.
-            </p>
-          </div>
-
-          {/* ============================================================ */}
           {/* BOTTOM LEFT CARD: CONTENT STRATEGY (Vivid Red Identity)     */}
           {/* ============================================================ */}
           <div
@@ -669,35 +636,15 @@ export function GrowthConvergence() {
         {/* Brand Red & White Theme                                       */}
         {/* ============================================================== */}
         <div className="md:hidden flex flex-col items-center">
-          {/* Mobile Top Node & Heading */}
-          <div className="text-center mb-6">
+          {/* Mobile Top Node */}
+          <div className="text-center mb-2">
             {/* Glowing Central Red Orb */}
-            <div className="relative inline-flex items-center justify-center mb-4">
+            <div className="relative inline-flex items-center justify-center">
               <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#ff2626]/30 via-[#d90808]/20 to-transparent blur-xl absolute" />
               <div className="relative w-14 h-14 rounded-full bg-gradient-to-tr from-[#450a0a] via-[#c50a0a] to-[#ff4d4d] flex items-center justify-center shadow-[0_0_25px_rgba(255,38,38,0.6)] border border-[#ff7575]/50">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
             </div>
-
-            {/* Brand Identifier */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-[#ff2626]/30 mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2626] animate-pulse" />
-              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#ff4d4d] font-mono">
-                YOUTOOGROW
-              </span>
-            </div>
-
-            {/* Main Heading */}
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2">
-              WE TURN CONTENT <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ff2626] via-[#ff4d4d] to-[#ffa3a3]">
-                INTO GROWTH.
-              </span>
-            </h2>
-
-            <p className="text-[11px] tracking-[0.2em] font-semibold text-[#aaa6a0] uppercase">
-              LET&apos;S GROW TOGETHER.
-            </p>
           </div>
 
           {/* Mobile Animated SVG Flow */}
