@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import {
   Compass,
   Video,
@@ -776,7 +777,7 @@ export function GrowthConvergence() {
         </div>
 
         {/* ============================================================== */}
-        {/* BOTTOM SUPPORTING STATEMENT                                    */}
+        {/* BOTTOM SUPPORTING STATEMENT / HEADLINE                         */}
         {/* Red & White Accent Palette                                    */}
         {/* ============================================================== */}
         <div
@@ -788,10 +789,18 @@ export function GrowthConvergence() {
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-white/[0.08]" />
 
           {/* Centered Pill Badge */}
-          <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#070709] border border-white/[0.1] text-[11px] sm:text-xs font-semibold tracking-[0.16em] text-[#f7f4ef] uppercase shadow-lg">
-            <TrendingUp className="w-3.5 h-3.5 text-[#ff2626]" />
-            <span>ONE STRATEGY. BETTER CONTENT. REAL GROWTH.</span>
-          </div>
+          <Link
+            href="mailto:contact@youtoogrow.com?subject=Strategy%20Call%20Application%20-%20YouTooGrow"
+            className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#070709] hover:bg-[#101014] border border-white/[0.12] hover:border-[#ff2626]/50 text-xs sm:text-sm font-semibold text-[#f7f4ef] shadow-lg hover:shadow-[0_0_25px_rgba(255,38,38,0.25)] transition-all duration-300"
+          >
+            <TrendingUp className="w-3.5 h-3.5 text-[#ff2626] shrink-0 group-hover:scale-110 transition-transform duration-200" />
+            <span>
+              Ready to become the #1 name in your{" "}
+              <span className="font-serif italic font-normal text-[#ff2626]">
+                industry?
+              </span>
+            </span>
+          </Link>
         </div>
       </div>
     </section>
