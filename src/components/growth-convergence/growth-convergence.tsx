@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   Compass,
   Video,
-  Sparkles,
   TrendingUp,
 } from "lucide-react";
 
@@ -16,7 +15,7 @@ export function GrowthConvergence() {
   // step 0: initial / hidden
   // step 1: cards appear (0ms)
   // step 2: lines start drawing upward from cards (300ms)
-  // step 3: convergence at central node -> node pulse + heading reveal (2100ms)
+  // step 3: convergence at BOOK A CALL button -> button glow pulse (2100ms)
   // step 4: bottom statement reveal + full completion (2600ms)
 
   const [activePillar, setActivePillar] = useState<"none" | "left" | "right">("none");
@@ -74,13 +73,13 @@ export function GrowthConvergence() {
   }, [hasStarted]);
 
   // SVG parameters
-  // Path length for desktop curves is ~413px. We use 420 for complete coverage.
-  const desktopPathLength = 420;
+  // Path length for desktop curves is ~440px. We use 450 for complete coverage.
+  const desktopPathLength = 450;
   const isDrawingDesktop = step >= 2;
   const desktopDashOffset = isDrawingDesktop ? 0 : desktopPathLength;
 
-  // Mobile path length is ~240px. We use 250 for complete coverage.
-  const mobilePathLength = 250;
+  // Mobile path length is ~180px. We use 200 for complete coverage.
+  const mobilePathLength = 200;
   const isDrawingMobile = step >= 2;
   const mobileDashOffset = isDrawingMobile ? 0 : mobilePathLength;
 
@@ -113,9 +112,41 @@ export function GrowthConvergence() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ============================================================== */}
         {/* DESKTOP & TABLET VIEWPORT (>= 768px)                          */}
-        {/* Brand Red & White Aesthetic                                   */}
+        {/* Convergence of lines directly into BOOK A CALL button          */}
         {/* ============================================================== */}
         <div className="hidden md:block relative w-full max-w-[1160px] mx-auto min-h-[600px] lg:min-h-[640px]">
+          {/* ============================================================ */}
+          {/* TOP CENTRAL CONVERGENCE ACTION: CIRCULAR BOOK A CALL BUTTON */}
+          {/* Revealing only when curves converge at the peak (step >= 3) */}
+          {/* Balanced glow: refined, cinematic, and glare-free          */}
+          {/* ============================================================ */}
+          <div className="absolute top-[96px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+            <Link
+              href="mailto:contact@youtoogrow.com?subject=Strategy%20Call%20Application%20-%20YouTooGrow"
+              className={`group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-b from-[#f83232] via-[#e61919] to-[#b30808] text-white shadow-[0_0_22px_rgba(255,38,38,0.35),0_6px_20px_rgba(0,0,0,0.6),inset_0_2px_3px_rgba(255,255,255,0.3),inset_0_-3px_6px_rgba(0,0,0,0.5)] hover:shadow-[0_0_32px_rgba(255,38,38,0.55),0_8px_25px_rgba(0,0,0,0.7),inset_0_2px_3px_rgba(255,255,255,0.4)] hover:scale-105 active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
+                step >= 3
+                  ? "scale-100 opacity-100 pointer-events-auto"
+                  : "scale-50 opacity-0 pointer-events-none"
+              }`}
+            >
+              {/* Inner decorative concentric border ring */}
+              <div className="absolute inset-1.5 sm:inset-2 rounded-full border border-white/20 pointer-events-none" />
+
+              {/* Top subtle highlight reflection */}
+              <div className="absolute top-2 w-8 sm:w-10 h-2.5 bg-white/25 rounded-full blur-[1px] pointer-events-none" />
+
+              {/* Text: BOOK A CALL */}
+              <div className="flex flex-col items-center justify-center text-center leading-[1.15] select-none z-10">
+                <span className="text-[11px] sm:text-xs font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                  BOOK
+                </span>
+                <span className="text-[11px] sm:text-xs font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                  A CALL
+                </span>
+              </div>
+            </Link>
+          </div>
+
           {/* SVG Canvas for Dual Curved Glowing Paths & Floating Badges */}
           <svg
             viewBox="0 0 1200 640"
@@ -123,19 +154,10 @@ export function GrowthConvergence() {
             aria-hidden="true"
           >
             <defs>
-              {/* Central Sphere 3D Gradient: Red & White */}
-              <radialGradient id="sphereGrad" cx="35%" cy="30%" r="70%">
-                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.98" />
-                <stop offset="18%" stopColor="#ff7575" stopOpacity="0.9" />
-                <stop offset="45%" stopColor="#ff2626" />
-                <stop offset="75%" stopColor="#c50a0a" />
-                <stop offset="100%" stopColor="#450a0a" />
-              </radialGradient>
-
-              {/* Sphere Ambient Radial Glow */}
+              {/* Sphere Ambient Radial Glow - Subdued & Balanced */}
               <radialGradient id="sphereRadialGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#ff2626" stopOpacity="0.5" />
-                <stop offset="50%" stopColor="#d90808" stopOpacity="0.25" />
+                <stop offset="0%" stopColor="#ff2626" stopOpacity="0.16" />
+                <stop offset="60%" stopColor="#ff2626" stopOpacity="0.04" />
                 <stop offset="100%" stopColor="#ff2626" stopOpacity="0" />
               </radialGradient>
 
@@ -165,56 +187,60 @@ export function GrowthConvergence() {
               </filter>
             </defs>
 
-            {/* Ambient Background Aura behind node */}
+            {/* Ambient Background Aura behind button (Balanced) */}
             <circle
               cx="600"
-              cy="95"
-              r="110"
+              cy="96"
+              r="85"
               fill="url(#sphereRadialGlow)"
               className={`transition-all duration-1000 ${
-                step >= 3 ? "opacity-100 scale-100" : "opacity-40 scale-75"
+                step >= 3 ? "opacity-100 scale-100" : "opacity-0 scale-50"
               }`}
             />
 
-            {/* Concentric Orbital Rings around convergence point */}
-            <g className={`transition-opacity duration-1000 ${step >= 3 ? "opacity-100" : "opacity-25"}`}>
+            {/* Concentric Orbital Rings around convergence peak */}
+            <g
+              className={`transition-all duration-1000 ${
+                step >= 3 ? "opacity-100 scale-100" : "opacity-0 scale-75"
+              }`}
+            >
               {/* Inner ring */}
               <circle
                 cx="600"
-                cy="95"
-                r="46"
+                cy="96"
+                r="70"
                 fill="none"
-                stroke="rgba(255, 38, 38, 0.45)"
-                strokeWidth="1.2"
+                stroke="rgba(255, 38, 38, 0.28)"
+                strokeWidth="1"
                 className="animate-[spin_40s_linear_infinite]"
                 strokeDasharray="4 6"
               />
               {/* Mid ring */}
               <circle
                 cx="600"
-                cy="95"
-                r="64"
+                cy="96"
+                r="95"
                 fill="none"
-                stroke="rgba(255, 255, 255, 0.22)"
-                strokeWidth="1"
+                stroke="rgba(255, 255, 255, 0.14)"
+                strokeWidth="0.8"
                 className="animate-[spin_55s_linear_infinite_reverse]"
                 strokeDasharray="3 5"
               />
               {/* Outer ring */}
               <circle
                 cx="600"
-                cy="95"
-                r="86"
+                cy="96"
+                r="120"
                 fill="none"
-                stroke="rgba(255, 38, 38, 0.16)"
-                strokeWidth="0.8"
+                stroke="rgba(255, 38, 38, 0.10)"
+                strokeWidth="0.6"
                 strokeDasharray="2 6"
               />
             </g>
 
             {/* ========================================================== */}
-            {/* LEFT CURVE (Vivid Red) - from Left Card to Node            */}
-            {/* Start: (365, 475) -> End: (572, 98)                       */}
+            {/* LEFT CURVE (Vivid Red) - from Left Card to Circular Button */}
+            {/* Start: (365, 475) -> End: (550, 96)                       */}
             {/* ========================================================== */}
             <g
               className={`transition-opacity duration-300 ${
@@ -223,7 +249,7 @@ export function GrowthConvergence() {
             >
               {/* Wide Bloom Layer */}
               <path
-                d="M 365 475 C 465 475, 520 250, 572 98"
+                d="M 365 475 C 460 475, 505 240, 550 96"
                 fill="none"
                 stroke="url(#leftCurveGrad)"
                 strokeWidth="14"
@@ -238,7 +264,7 @@ export function GrowthConvergence() {
               />
               {/* Mid Glow Layer */}
               <path
-                d="M 365 475 C 465 475, 520 250, 572 98"
+                d="M 365 475 C 460 475, 505 240, 550 96"
                 fill="none"
                 stroke="url(#leftCurveGrad)"
                 strokeWidth="5"
@@ -253,7 +279,7 @@ export function GrowthConvergence() {
               />
               {/* Crisp Core Stroke (White Core) */}
               <path
-                d="M 365 475 C 465 475, 520 250, 572 98"
+                d="M 365 475 C 460 475, 505 240, 550 96"
                 fill="none"
                 stroke="#fff5f5"
                 strokeWidth="2"
@@ -267,8 +293,8 @@ export function GrowthConvergence() {
             </g>
 
             {/* ========================================================== */}
-            {/* RIGHT CURVE (Crimson / Ruby Red) - from Right Card to Node */}
-            {/* Start: (835, 475) -> End: (628, 98)                       */}
+            {/* RIGHT CURVE (Crimson Red) - from Right Card to Button      */}
+            {/* Start: (835, 475) -> End: (650, 96)                       */}
             {/* ========================================================== */}
             <g
               className={`transition-opacity duration-300 ${
@@ -277,7 +303,7 @@ export function GrowthConvergence() {
             >
               {/* Wide Bloom Layer */}
               <path
-                d="M 835 475 C 735 475, 680 250, 628 98"
+                d="M 835 475 C 740 475, 695 240, 650 96"
                 fill="none"
                 stroke="url(#rightCurveGrad)"
                 strokeWidth="14"
@@ -292,7 +318,7 @@ export function GrowthConvergence() {
               />
               {/* Mid Glow Layer */}
               <path
-                d="M 835 475 C 735 475, 680 250, 628 98"
+                d="M 835 475 C 740 475, 695 240, 650 96"
                 fill="none"
                 stroke="url(#rightCurveGrad)"
                 strokeWidth="5"
@@ -307,7 +333,7 @@ export function GrowthConvergence() {
               />
               {/* Crisp Core Stroke (White Core) */}
               <path
-                d="M 835 475 C 735 475, 680 250, 628 98"
+                d="M 835 475 C 740 475, 695 240, 650 96"
                 fill="none"
                 stroke="#fff5f5"
                 strokeWidth="2"
@@ -322,11 +348,10 @@ export function GrowthConvergence() {
 
             {/* ========================================================== */}
             {/* FLOATING PILL LABELS ALONG THE CURVES                      */}
-            {/* Pure SVG transforms with Red Glowing Indicators            */}
             {/* ========================================================== */}
             {/* Left 1: STRATEGY (Near left card) */}
             <g
-              transform="translate(340, 430)"
+              transform="translate(325, 438)"
               filter="url(#badgeShadow)"
               className={`transition-opacity duration-500 ${
                 step >= 2 ? "opacity-100" : "opacity-0"
@@ -357,7 +382,7 @@ export function GrowthConvergence() {
 
             {/* Left 2: SEO (Mid ascent) */}
             <g
-              transform="translate(415, 325)"
+              transform="translate(405, 328)"
               filter="url(#badgeShadow)"
               className={`transition-opacity duration-500 delay-300 ${
                 step >= 2 ? "opacity-100" : "opacity-0"
@@ -386,9 +411,9 @@ export function GrowthConvergence() {
               </text>
             </g>
 
-            {/* Left 3: BRANDING (Upper curve) */}
+            {/* Left 3: BRANDING (Upper curve near button) */}
             <g
-              transform="translate(445, 195)"
+              transform="translate(424, 182)"
               filter="url(#badgeShadow)"
               className={`transition-opacity duration-500 delay-700 ${
                 step >= 2 ? "opacity-100" : "opacity-0"
@@ -419,7 +444,7 @@ export function GrowthConvergence() {
 
             {/* Right 1: ENGAGEMENT (Near right card) */}
             <g
-              transform="translate(790, 430)"
+              transform="translate(792, 438)"
               filter="url(#badgeShadow)"
               className={`transition-opacity duration-500 ${
                 step >= 2 ? "opacity-100" : "opacity-0"
@@ -450,7 +475,7 @@ export function GrowthConvergence() {
 
             {/* Right 2: DESIGN (Mid ascent) */}
             <g
-              transform="translate(730, 325)"
+              transform="translate(739, 328)"
               filter="url(#badgeShadow)"
               className={`transition-opacity duration-500 delay-300 ${
                 step >= 2 ? "opacity-100" : "opacity-0"
@@ -479,9 +504,9 @@ export function GrowthConvergence() {
               </text>
             </g>
 
-            {/* Right 3: EDITING (Upper curve) */}
+            {/* Right 3: EDITING (Upper curve near button) */}
             <g
-              transform="translate(680, 195)"
+              transform="translate(692, 182)"
               filter="url(#badgeShadow)"
               className={`transition-opacity duration-500 delay-700 ${
                 step >= 2 ? "opacity-100" : "opacity-0"
@@ -508,44 +533,6 @@ export function GrowthConvergence() {
               >
                 EDITING
               </text>
-            </g>
-
-            {/* ========================================================== */}
-            {/* TOP CENTRAL CONVERGENCE NODE (Glossy 3D Red Sphere)        */}
-            {/* ========================================================== */}
-            <g
-              className={`transition-all duration-700 ${
-                step >= 3 ? "scale-100 opacity-100" : "scale-90 opacity-80"
-              }`}
-              style={{ transformOrigin: "600px 95px" }}
-            >
-              {/* Outer Glow Halo */}
-              <circle
-                cx="600"
-                cy="95"
-                r="38"
-                fill="none"
-                stroke="rgba(255, 38, 38, 0.6)"
-                strokeWidth="2"
-                filter="url(#glowCore)"
-              />
-              {/* Sphere Body */}
-              <circle cx="600" cy="95" r="32" fill="url(#sphereGrad)" />
-              {/* Specular Highlight Sheen */}
-              <ellipse
-                cx="593"
-                cy="84"
-                rx="14"
-                ry="6"
-                fill="#ffffff"
-                opacity="0.65"
-                transform="rotate(-15 593 84)"
-              />
-              {/* Mountain Summit / Digital Growth Icon inside node */}
-              <g transform="translate(588, 85) scale(0.9)" fill="#ffffff" opacity="0.95">
-                <path d="M12 3L2 19h20L12 3zm0 4.5l5.5 9.5h-11L12 7.5z" />
-                <circle cx="19" cy="7" r="2" fill="#ffffff" />
-              </g>
             </g>
           </svg>
 
@@ -620,23 +607,34 @@ export function GrowthConvergence() {
 
         {/* ============================================================== */}
         {/* MOBILE VIEWPORT (< 768px)                                      */}
-        {/* Brand Red & White Theme                                       */}
+        {/* Clean vertical layout with circular BOOK A CALL at top summit   */}
         {/* ============================================================== */}
         <div className="md:hidden flex flex-col items-center">
-          {/* Mobile Top Node */}
-          <div className="text-center mb-2">
-            {/* Glowing Central Red Orb */}
-            <div className="relative inline-flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#ff2626]/30 via-[#d90808]/20 to-transparent blur-xl absolute" />
-              <div className="relative w-14 h-14 rounded-full bg-gradient-to-tr from-[#450a0a] via-[#c50a0a] to-[#ff4d4d] flex items-center justify-center shadow-[0_0_25px_rgba(255,38,38,0.6)] border border-[#ff7575]/50">
-                <Sparkles className="w-6 h-6 text-white" />
-              </div>
+          {/* Mobile Animated SVG Flow with Circular Summit Button */}
+          <div className="relative w-full max-w-[360px] h-[200px] my-2">
+            {/* Mobile Top Circular BOOK A CALL Button (reveals when step >= 3) */}
+            <div className="absolute top-[40px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+              <Link
+                href="mailto:contact@youtoogrow.com?subject=Strategy%20Call%20Application%20-%20YouTooGrow"
+                className={`group relative flex flex-col items-center justify-center w-20 h-20 rounded-full bg-gradient-to-b from-[#f83232] via-[#e61919] to-[#b30808] text-white shadow-[0_0_18px_rgba(255,38,38,0.35),0_4px_14px_rgba(0,0,0,0.6),inset_0_1.5px_2px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_0_26px_rgba(255,38,38,0.5),0_6px_18px_rgba(0,0,0,0.7)] active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
+                  step >= 3
+                    ? "scale-100 opacity-100 pointer-events-auto"
+                    : "scale-50 opacity-0 pointer-events-none"
+                }`}
+              >
+                <div className="absolute inset-1 rounded-full border border-white/20 pointer-events-none" />
+                <div className="flex flex-col items-center justify-center text-center leading-[1.15] select-none">
+                  <span className="text-[10px] font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                    BOOK
+                  </span>
+                  <span className="text-[10px] font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                    A CALL
+                  </span>
+                </div>
+              </Link>
             </div>
-          </div>
 
-          {/* Mobile Animated SVG Flow */}
-          <div className="relative w-full max-w-[360px] h-[170px] my-2">
-            <svg viewBox="0 0 360 170" className="w-full h-full overflow-visible" aria-hidden="true">
+            <svg viewBox="0 0 360 200" className="w-full h-full overflow-visible" aria-hidden="true">
               <defs>
                 <linearGradient id="mobLeftGrad" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#ff2626" />
@@ -648,9 +646,20 @@ export function GrowthConvergence() {
                 </linearGradient>
               </defs>
 
+              {/* Ambient radial glow at summit (Balanced) */}
+              <circle
+                cx="180"
+                cy="40"
+                r="48"
+                fill="url(#sphereRadialGlow)"
+                className={`transition-all duration-1000 ${
+                  step >= 3 ? "opacity-100 scale-100" : "opacity-0 scale-50"
+                }`}
+              />
+
               {/* Left Line */}
               <path
-                d="M 45 155 C 85 155, 135 80, 172 15"
+                d="M 45 180 C 85 180, 115 90, 140 40"
                 fill="none"
                 stroke="url(#mobLeftGrad)"
                 strokeWidth="3.5"
@@ -665,7 +674,7 @@ export function GrowthConvergence() {
 
               {/* Right Line */}
               <path
-                d="M 315 155 C 275 155, 225 80, 188 15"
+                d="M 315 180 C 275 180, 245 90, 220 40"
                 fill="none"
                 stroke="url(#mobRightGrad)"
                 strokeWidth="3.5"
@@ -680,7 +689,7 @@ export function GrowthConvergence() {
 
               {/* Mobile Badges - Left (Strategy, SEO, Branding) */}
               <g
-                transform="translate(25, 115)"
+                transform="translate(18, 140)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
@@ -689,7 +698,7 @@ export function GrowthConvergence() {
               </g>
 
               <g
-                transform="translate(70, 70)"
+                transform="translate(60, 92)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="44" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
@@ -698,7 +707,7 @@ export function GrowthConvergence() {
               </g>
 
               <g
-                transform="translate(95, 25)"
+                transform="translate(78, 44)"
                 className={`transition-opacity duration-500 delay-700 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.5)" strokeWidth="1" />
@@ -708,7 +717,7 @@ export function GrowthConvergence() {
 
               {/* Mobile Badges - Right (Engagement, Design, Editing) */}
               <g
-                transform="translate(265, 115)"
+                transform="translate(270, 140)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="70" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
@@ -717,7 +726,7 @@ export function GrowthConvergence() {
               </g>
 
               <g
-                transform="translate(235, 70)"
+                transform="translate(244, 92)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="50" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
@@ -726,7 +735,7 @@ export function GrowthConvergence() {
               </g>
 
               <g
-                transform="translate(200, 25)"
+                transform="translate(210, 44)"
                 className={`transition-opacity duration-500 delay-700 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="54" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.5)" strokeWidth="1" />
