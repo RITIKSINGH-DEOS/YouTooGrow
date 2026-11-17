@@ -91,14 +91,14 @@ export function GrowthConvergence() {
       id="growth-engine"
       aria-label="YouTooGrow Content Growth Engine"
     >
-      {/* Background Ambience & Lighting */}
+      {/* Background Ambience & Lighting - Brand Red & White Theme */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        {/* Top-Center Purple Atmosphere Bloom */}
-        <div className="absolute top-[6%] left-1/2 -translate-x-1/2 w-[650px] h-[360px] bg-purple-600/[0.10] rounded-full blur-[140px]" />
-        {/* Left Bottom Pink Glow */}
-        <div className="absolute bottom-[10%] left-[5%] w-[420px] h-[260px] bg-pink-600/[0.08] rounded-full blur-[130px]" />
-        {/* Right Bottom Purple Glow */}
-        <div className="absolute bottom-[10%] right-[5%] w-[420px] h-[260px] bg-purple-600/[0.08] rounded-full blur-[130px]" />
+        {/* Top-Center Red Atmosphere Bloom */}
+        <div className="absolute top-[6%] left-1/2 -translate-x-1/2 w-[650px] h-[360px] bg-[#ff2626]/[0.08] rounded-full blur-[140px]" />
+        {/* Left Bottom Vivid Red Glow */}
+        <div className="absolute bottom-[10%] left-[5%] w-[420px] h-[260px] bg-[#ff2626]/[0.06] rounded-full blur-[130px]" />
+        {/* Right Bottom Crimson Glow */}
+        <div className="absolute bottom-[10%] right-[5%] w-[420px] h-[260px] bg-[#d90808]/[0.06] rounded-full blur-[130px]" />
         {/* Subtle Fine Grid Texture */}
         <div
           className="absolute inset-0 opacity-[0.025]"
@@ -119,14 +119,14 @@ export function GrowthConvergence() {
             title="Replay convergence animation"
             aria-label="Replay convergence animation"
           >
-            <RotateCcw className="w-3 h-3 transition-transform duration-500 group-hover:-rotate-180 text-pink-400" />
+            <RotateCcw className="w-3 h-3 transition-transform duration-500 group-hover:-rotate-180 text-[#ff2626]" />
             <span className="font-mono text-[10px] tracking-wider uppercase">Replay</span>
           </button>
         </div>
 
         {/* ============================================================== */}
         {/* DESKTOP & TABLET VIEWPORT (>= 768px)                          */}
-        {/* Recreates the reference image panoramic layout                 */}
+        {/* Brand Red & White Aesthetic                                   */}
         {/* ============================================================== */}
         <div className="hidden md:block relative w-full max-w-[1160px] mx-auto min-h-[600px] lg:min-h-[640px]">
           {/* SVG Canvas for Dual Curved Glowing Paths & Floating Badges */}
@@ -136,34 +136,34 @@ export function GrowthConvergence() {
             aria-hidden="true"
           >
             <defs>
-              {/* Central Sphere 3D Gradient */}
+              {/* Central Sphere 3D Gradient: Red & White */}
               <radialGradient id="sphereGrad" cx="35%" cy="30%" r="70%">
-                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.95" />
-                <stop offset="20%" stopColor="#f472b6" stopOpacity="0.9" />
-                <stop offset="55%" stopColor="#c026d3" />
-                <stop offset="85%" stopColor="#7e22ce" />
-                <stop offset="100%" stopColor="#3b0764" />
+                <stop offset="0%" stopColor="#ffffff" stopOpacity="0.98" />
+                <stop offset="18%" stopColor="#ff7575" stopOpacity="0.9" />
+                <stop offset="45%" stopColor="#ff2626" />
+                <stop offset="75%" stopColor="#c50a0a" />
+                <stop offset="100%" stopColor="#450a0a" />
               </radialGradient>
 
               {/* Sphere Ambient Radial Glow */}
               <radialGradient id="sphereRadialGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#d946ef" stopOpacity="0.45" />
-                <stop offset="50%" stopColor="#a855f7" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+                <stop offset="0%" stopColor="#ff2626" stopOpacity="0.5" />
+                <stop offset="50%" stopColor="#d90808" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#ff2626" stopOpacity="0" />
               </radialGradient>
 
-              {/* Left Curve Gradient: Pink / Magenta */}
+              {/* Left Curve Gradient: Vivid Red */}
               <linearGradient id="leftCurveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#ec4899" />
-                <stop offset="50%" stopColor="#f43f5e" />
-                <stop offset="100%" stopColor="#fb7185" />
+                <stop offset="0%" stopColor="#ff2626" />
+                <stop offset="50%" stopColor="#ff4d4d" />
+                <stop offset="100%" stopColor="#ffa3a3" />
               </linearGradient>
 
-              {/* Right Curve Gradient: Purple / Violet */}
+              {/* Right Curve Gradient: Crimson / Ruby Red */}
               <linearGradient id="rightCurveGrad" x1="100%" y1="100%" x2="0%" y2="0%">
-                <stop offset="0%" stopColor="#8b5cf6" />
-                <stop offset="50%" stopColor="#a855f7" />
-                <stop offset="100%" stopColor="#c084fc" />
+                <stop offset="0%" stopColor="#e11d48" />
+                <stop offset="50%" stopColor="#ff3355" />
+                <stop offset="100%" stopColor="#ffa3b0" />
               </linearGradient>
 
               {/* Multi-layer Glow Filters */}
@@ -174,7 +174,7 @@ export function GrowthConvergence() {
                 <feGaussianBlur stdDeviation="3.5" result="blur" />
               </filter>
               <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
-                <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#000000" floodOpacity="0.7" />
+                <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#000000" floodOpacity="0.75" />
               </filter>
             </defs>
 
@@ -197,7 +197,7 @@ export function GrowthConvergence() {
                 cy="95"
                 r="46"
                 fill="none"
-                stroke="rgba(244, 114, 182, 0.45)"
+                stroke="rgba(255, 38, 38, 0.45)"
                 strokeWidth="1.2"
                 className="animate-[spin_40s_linear_infinite]"
                 strokeDasharray="4 6"
@@ -208,7 +208,7 @@ export function GrowthConvergence() {
                 cy="95"
                 r="64"
                 fill="none"
-                stroke="rgba(168, 85, 247, 0.3)"
+                stroke="rgba(255, 255, 255, 0.22)"
                 strokeWidth="1"
                 className="animate-[spin_55s_linear_infinite_reverse]"
                 strokeDasharray="3 5"
@@ -219,14 +219,14 @@ export function GrowthConvergence() {
                 cy="95"
                 r="86"
                 fill="none"
-                stroke="rgba(216, 70, 239, 0.16)"
+                stroke="rgba(255, 38, 38, 0.16)"
                 strokeWidth="0.8"
                 strokeDasharray="2 6"
               />
             </g>
 
             {/* ========================================================== */}
-            {/* LEFT CURVE (Pink / Magenta) - from Left Card to Node       */}
+            {/* LEFT CURVE (Vivid Red) - from Left Card to Node            */}
             {/* Start: (365, 475) -> End: (572, 98)                       */}
             {/* ========================================================== */}
             <g
@@ -242,7 +242,7 @@ export function GrowthConvergence() {
                 strokeWidth="14"
                 strokeLinecap="round"
                 filter="url(#glowWide)"
-                opacity="0.35"
+                opacity="0.38"
                 style={{
                   strokeDasharray: desktopPathLength,
                   strokeDashoffset: desktopDashOffset,
@@ -257,18 +257,18 @@ export function GrowthConvergence() {
                 strokeWidth="5"
                 strokeLinecap="round"
                 filter="url(#glowCore)"
-                opacity="0.8"
+                opacity="0.85"
                 style={{
                   strokeDasharray: desktopPathLength,
                   strokeDashoffset: desktopDashOffset,
                   transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
                 }}
               />
-              {/* Crisp Core Stroke */}
+              {/* Crisp Core Stroke (White Core) */}
               <path
                 d="M 365 475 C 465 475, 520 250, 572 98"
                 fill="none"
-                stroke="#fce7f3"
+                stroke="#fff5f5"
                 strokeWidth="2"
                 strokeLinecap="round"
                 style={{
@@ -280,7 +280,7 @@ export function GrowthConvergence() {
             </g>
 
             {/* ========================================================== */}
-            {/* RIGHT CURVE (Purple / Violet) - from Right Card to Node    */}
+            {/* RIGHT CURVE (Crimson / Ruby Red) - from Right Card to Node */}
             {/* Start: (835, 475) -> End: (628, 98)                       */}
             {/* ========================================================== */}
             <g
@@ -296,7 +296,7 @@ export function GrowthConvergence() {
                 strokeWidth="14"
                 strokeLinecap="round"
                 filter="url(#glowWide)"
-                opacity="0.35"
+                opacity="0.38"
                 style={{
                   strokeDasharray: desktopPathLength,
                   strokeDashoffset: desktopDashOffset,
@@ -311,18 +311,18 @@ export function GrowthConvergence() {
                 strokeWidth="5"
                 strokeLinecap="round"
                 filter="url(#glowCore)"
-                opacity="0.8"
+                opacity="0.85"
                 style={{
                   strokeDasharray: desktopPathLength,
                   strokeDashoffset: desktopDashOffset,
                   transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
                 }}
               />
-              {/* Crisp Core Stroke */}
+              {/* Crisp Core Stroke (White Core) */}
               <path
                 d="M 835 475 C 735 475, 680 250, 628 98"
                 fill="none"
-                stroke="#f3e8ff"
+                stroke="#fff5f5"
                 strokeWidth="2"
                 strokeLinecap="round"
                 style={{
@@ -335,7 +335,7 @@ export function GrowthConvergence() {
 
             {/* ========================================================== */}
             {/* FLOATING PILL LABELS ALONG THE CURVES                      */}
-            {/* Pure SVG transforms without conflicting CSS translateY     */}
+            {/* Pure SVG transforms with Red Glowing Indicators            */}
             {/* ========================================================== */}
             {/* Left 1: STRATEGY (Near left card) */}
             <g
@@ -352,10 +352,10 @@ export function GrowthConvergence() {
                 height="22"
                 rx="11"
                 fill="#0b0b10"
-                stroke="rgba(236, 72, 153, 0.4)"
+                stroke="rgba(255, 38, 38, 0.45)"
                 strokeWidth="1"
               />
-              <circle cx="11" cy="11" r="3" fill="#ec4899" />
+              <circle cx="11" cy="11" r="3" fill="#ff2626" />
               <text
                 x="20"
                 y="14.5"
@@ -383,10 +383,10 @@ export function GrowthConvergence() {
                 height="22"
                 rx="11"
                 fill="#0b0b10"
-                stroke="rgba(236, 72, 153, 0.4)"
+                stroke="rgba(255, 38, 38, 0.45)"
                 strokeWidth="1"
               />
-              <circle cx="11" cy="11" r="3" fill="#ec4899" />
+              <circle cx="11" cy="11" r="3" fill="#ff2626" />
               <text
                 x="20"
                 y="14.5"
@@ -414,10 +414,10 @@ export function GrowthConvergence() {
                 height="22"
                 rx="11"
                 fill="#0b0b10"
-                stroke="rgba(236, 72, 153, 0.45)"
+                stroke="rgba(255, 38, 38, 0.5)"
                 strokeWidth="1"
               />
-              <circle cx="11" cy="11" r="3" fill="#ec4899" />
+              <circle cx="11" cy="11" r="3" fill="#ff2626" />
               <text
                 x="20"
                 y="14.5"
@@ -445,10 +445,10 @@ export function GrowthConvergence() {
                 height="22"
                 rx="11"
                 fill="#0b0b10"
-                stroke="rgba(168, 85, 247, 0.4)"
+                stroke="rgba(255, 38, 38, 0.45)"
                 strokeWidth="1"
               />
-              <circle cx="11" cy="11" r="3" fill="#a855f7" />
+              <circle cx="11" cy="11" r="3" fill="#ff3355" />
               <text
                 x="20"
                 y="14.5"
@@ -476,10 +476,10 @@ export function GrowthConvergence() {
                 height="22"
                 rx="11"
                 fill="#0b0b10"
-                stroke="rgba(168, 85, 247, 0.4)"
+                stroke="rgba(255, 38, 38, 0.45)"
                 strokeWidth="1"
               />
-              <circle cx="11" cy="11" r="3" fill="#a855f7" />
+              <circle cx="11" cy="11" r="3" fill="#ff3355" />
               <text
                 x="20"
                 y="14.5"
@@ -507,10 +507,10 @@ export function GrowthConvergence() {
                 height="22"
                 rx="11"
                 fill="#0b0b10"
-                stroke="rgba(168, 85, 247, 0.45)"
+                stroke="rgba(255, 38, 38, 0.5)"
                 strokeWidth="1"
               />
-              <circle cx="11" cy="11" r="3" fill="#a855f7" />
+              <circle cx="11" cy="11" r="3" fill="#ff3355" />
               <text
                 x="20"
                 y="14.5"
@@ -524,7 +524,7 @@ export function GrowthConvergence() {
             </g>
 
             {/* ========================================================== */}
-            {/* TOP CENTRAL CONVERGENCE NODE (Glossy 3D Sphere)           */}
+            {/* TOP CENTRAL CONVERGENCE NODE (Glossy 3D Red Sphere)        */}
             {/* ========================================================== */}
             <g
               className={`transition-all duration-700 ${
@@ -538,7 +538,7 @@ export function GrowthConvergence() {
                 cy="95"
                 r="38"
                 fill="none"
-                stroke="rgba(244, 114, 182, 0.55)"
+                stroke="rgba(255, 38, 38, 0.6)"
                 strokeWidth="2"
                 filter="url(#glowCore)"
               />
@@ -551,7 +551,7 @@ export function GrowthConvergence() {
                 rx="14"
                 ry="6"
                 fill="#ffffff"
-                opacity="0.55"
+                opacity="0.65"
                 transform="rotate(-15 593 84)"
               />
               {/* Mountain Summit / Digital Growth Icon inside node */}
@@ -564,7 +564,7 @@ export function GrowthConvergence() {
 
           {/* ============================================================ */}
           {/* CENTRAL HEADING (Revealed after convergence at step 3)       */}
-          {/* Nestled under the convergence node in the apex triangular void*/}
+          {/* Red & White Luxury Palette                                  */}
           {/* ============================================================ */}
           <div
             className={`absolute top-[175px] left-1/2 -translate-x-1/2 text-center w-full max-w-[480px] pointer-events-auto transition-all duration-800 ease-out ${
@@ -574,9 +574,9 @@ export function GrowthConvergence() {
             }`}
           >
             {/* Brand Identifier */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] mb-2.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 animate-pulse" />
-              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-pink-300/90 font-mono">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-[#ff2626]/30 mb-2.5 shadow-[0_0_15px_rgba(255,38,38,0.15)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2626] animate-pulse" />
+              <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#ff4d4d] font-mono">
                 YOUTOOGROW
               </span>
             </div>
@@ -584,7 +584,7 @@ export function GrowthConvergence() {
             {/* Main Heading */}
             <h2 className="text-3xl lg:text-[40px] font-extrabold text-white tracking-tight leading-[1.15] mb-2">
               WE TURN CONTENT <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ff2626] via-[#ff4d4d] to-[#ffa3a3]">
                 INTO GROWTH.
               </span>
             </h2>
@@ -596,7 +596,7 @@ export function GrowthConvergence() {
           </div>
 
           {/* ============================================================ */}
-          {/* BOTTOM LEFT CARD: CONTENT STRATEGY                          */}
+          {/* BOTTOM LEFT CARD: CONTENT STRATEGY (Vivid Red Identity)     */}
           {/* ============================================================ */}
           <div
             onMouseEnter={() => setActivePillar("left")}
@@ -605,19 +605,19 @@ export function GrowthConvergence() {
               step >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="relative rounded-2xl bg-[#0b0b10]/90 backdrop-blur-xl border border-pink-500/25 hover:border-pink-500/50 p-6 transition-all duration-300 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8),0_0_25px_-5px_rgba(236,72,153,0.15)] hover:shadow-[0_15px_45px_-10px_rgba(0,0,0,0.9),0_0_35px_-2px_rgba(236,72,153,0.3)] group cursor-default">
+            <div className="relative rounded-2xl bg-[#0b0b10]/90 backdrop-blur-xl border border-[#ff2626]/30 hover:border-[#ff2626]/60 p-6 transition-all duration-300 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8),0_0_25px_-5px_rgba(255,38,38,0.15)] hover:shadow-[0_15px_45px_-10px_rgba(0,0,0,0.9),0_0_35px_-2px_rgba(255,38,38,0.3)] group cursor-default">
               {/* Subtle top ambient glow */}
-              <div className="absolute top-0 right-0 w-36 h-20 bg-pink-500/[0.08] rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-36 h-20 bg-[#ff2626]/[0.08] rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-3.5 mb-3.5">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500/20 to-pink-500/5 border border-pink-500/30 flex items-center justify-center text-pink-400 shadow-[0_0_15px_rgba(236,72,153,0.25)] group-hover:scale-105 transition-transform duration-300">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#ff2626]/20 to-[#ff2626]/5 border border-[#ff2626]/40 flex items-center justify-center text-[#ff2626] shadow-[0_0_15px_rgba(255,38,38,0.25)] group-hover:scale-105 transition-transform duration-300">
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white tracking-tight leading-snug">
                     Content Strategy
                   </h3>
-                  <p className="text-[10px] tracking-[0.18em] uppercase font-semibold text-pink-400/90 font-mono">
+                  <p className="text-[10px] tracking-[0.18em] uppercase font-semibold text-[#ff4d4d] font-mono">
                     Foundational Pillar
                   </p>
                 </div>
@@ -630,7 +630,7 @@ export function GrowthConvergence() {
           </div>
 
           {/* ============================================================ */}
-          {/* BOTTOM RIGHT CARD: CONTENT CREATION                         */}
+          {/* BOTTOM RIGHT CARD: CONTENT CREATION (Crimson Red Identity)  */}
           {/* ============================================================ */}
           <div
             onMouseEnter={() => setActivePillar("right")}
@@ -639,19 +639,19 @@ export function GrowthConvergence() {
               step >= 1 ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <div className="relative rounded-2xl bg-[#0b0b10]/90 backdrop-blur-xl border border-purple-500/25 hover:border-purple-500/50 p-6 transition-all duration-300 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8),0_0_25px_-5px_rgba(168,85,247,0.15)] hover:shadow-[0_15px_45px_-10px_rgba(0,0,0,0.9),0_0_35px_-2px_rgba(168,85,247,0.3)] group cursor-default">
+            <div className="relative rounded-2xl bg-[#0b0b10]/90 backdrop-blur-xl border border-[#ff3355]/30 hover:border-[#ff3355]/60 p-6 transition-all duration-300 shadow-[0_10px_35px_-10px_rgba(0,0,0,0.8),0_0_25px_-5px_rgba(255,51,85,0.15)] hover:shadow-[0_15px_45px_-10px_rgba(0,0,0,0.9),0_0_35px_-2px_rgba(255,51,85,0.3)] group cursor-default">
               {/* Subtle top ambient glow */}
-              <div className="absolute top-0 left-0 w-36 h-20 bg-purple-500/[0.08] rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 left-0 w-36 h-20 bg-[#ff3355]/[0.08] rounded-full blur-2xl pointer-events-none" />
 
               <div className="flex items-center gap-3.5 mb-3.5">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-500/5 border border-purple-500/30 flex items-center justify-center text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.25)] group-hover:scale-105 transition-transform duration-300">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#ff3355]/20 to-[#ff3355]/5 border border-[#ff3355]/40 flex items-center justify-center text-[#ff3355] shadow-[0_0_15px_rgba(255,51,85,0.25)] group-hover:scale-105 transition-transform duration-300">
                   <Video className="w-5 h-5" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white tracking-tight leading-snug">
                     Content Creation
                   </h3>
-                  <p className="text-[10px] tracking-[0.18em] uppercase font-semibold text-purple-400/90 font-mono">
+                  <p className="text-[10px] tracking-[0.18em] uppercase font-semibold text-[#ff667f] font-mono">
                     Execution Engine
                   </p>
                 </div>
@@ -666,23 +666,23 @@ export function GrowthConvergence() {
 
         {/* ============================================================== */}
         {/* MOBILE VIEWPORT (< 768px)                                      */}
-        {/* Simplified vertical responsive composition                     */}
+        {/* Brand Red & White Theme                                       */}
         {/* ============================================================== */}
         <div className="md:hidden flex flex-col items-center">
           {/* Mobile Top Node & Heading */}
           <div className="text-center mb-6">
-            {/* Glowing Central Orb */}
+            {/* Glowing Central Red Orb */}
             <div className="relative inline-flex items-center justify-center mb-4">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-transparent blur-xl absolute" />
-              <div className="relative w-14 h-14 rounded-full bg-gradient-to-tr from-[#3b0764] via-[#7e22ce] to-[#f472b6] flex items-center justify-center shadow-[0_0_25px_rgba(216,70,239,0.5)] border border-pink-400/40">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#ff2626]/30 via-[#d90808]/20 to-transparent blur-xl absolute" />
+              <div className="relative w-14 h-14 rounded-full bg-gradient-to-tr from-[#450a0a] via-[#c50a0a] to-[#ff4d4d] flex items-center justify-center shadow-[0_0_25px_rgba(255,38,38,0.6)] border border-[#ff7575]/50">
                 <Sparkles className="w-6 h-6 text-white" />
               </div>
             </div>
 
             {/* Brand Identifier */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-pink-400 animate-pulse" />
-              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-pink-300/90 font-mono">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-[#ff2626]/30 mb-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#ff2626] animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#ff4d4d] font-mono">
                 YOUTOOGROW
               </span>
             </div>
@@ -690,7 +690,7 @@ export function GrowthConvergence() {
             {/* Main Heading */}
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight mb-2">
               WE TURN CONTENT <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ff2626] via-[#ff4d4d] to-[#ffa3a3]">
                 INTO GROWTH.
               </span>
             </h2>
@@ -705,12 +705,12 @@ export function GrowthConvergence() {
             <svg viewBox="0 0 360 170" className="w-full h-full overflow-visible" aria-hidden="true">
               <defs>
                 <linearGradient id="mobLeftGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#ec4899" />
-                  <stop offset="100%" stopColor="#fb7185" />
+                  <stop offset="0%" stopColor="#ff2626" />
+                  <stop offset="100%" stopColor="#ffa3a3" />
                 </linearGradient>
                 <linearGradient id="mobRightGrad" x1="100%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%" stopColor="#8b5cf6" />
-                  <stop offset="100%" stopColor="#c084fc" />
+                  <stop offset="0%" stopColor="#e11d48" />
+                  <stop offset="100%" stopColor="#ffa3b0" />
                 </linearGradient>
               </defs>
 
@@ -721,7 +721,7 @@ export function GrowthConvergence() {
                 stroke="url(#mobLeftGrad)"
                 strokeWidth="3.5"
                 strokeLinecap="round"
-                filter="drop-shadow(0 0 8px rgba(236,72,153,0.7))"
+                filter="drop-shadow(0 0 8px rgba(255,38,38,0.7))"
                 style={{
                   strokeDasharray: mobilePathLength,
                   strokeDashoffset: mobileDashOffset,
@@ -736,7 +736,7 @@ export function GrowthConvergence() {
                 stroke="url(#mobRightGrad)"
                 strokeWidth="3.5"
                 strokeLinecap="round"
-                filter="drop-shadow(0 0 8px rgba(168,85,247,0.7))"
+                filter="drop-shadow(0 0 8px rgba(225,29,72,0.7))"
                 style={{
                   strokeDasharray: mobilePathLength,
                   strokeDashoffset: mobileDashOffset,
@@ -749,8 +749,8 @@ export function GrowthConvergence() {
                 transform="translate(25, 115)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(236,72,153,0.4)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ec4899" />
+                <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
+                <circle cx="8" cy="9" r="2.5" fill="#ff2626" />
                 <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">STRATEGY</text>
               </g>
 
@@ -758,8 +758,8 @@ export function GrowthConvergence() {
                 transform="translate(70, 70)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="44" height="18" rx="9" fill="#0b0b10" stroke="rgba(236,72,153,0.4)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ec4899" />
+                <rect x="0" y="0" width="44" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
+                <circle cx="8" cy="9" r="2.5" fill="#ff2626" />
                 <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">SEO</text>
               </g>
 
@@ -767,8 +767,8 @@ export function GrowthConvergence() {
                 transform="translate(95, 25)"
                 className={`transition-opacity duration-500 delay-700 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(236,72,153,0.4)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ec4899" />
+                <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.5)" strokeWidth="1" />
+                <circle cx="8" cy="9" r="2.5" fill="#ff2626" />
                 <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">BRANDING</text>
               </g>
 
@@ -777,8 +777,8 @@ export function GrowthConvergence() {
                 transform="translate(265, 115)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="70" height="18" rx="9" fill="#0b0b10" stroke="rgba(168,85,247,0.4)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#a855f7" />
+                <rect x="0" y="0" width="70" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
+                <circle cx="8" cy="9" r="2.5" fill="#ff3355" />
                 <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">ENGAGE</text>
               </g>
 
@@ -786,8 +786,8 @@ export function GrowthConvergence() {
                 transform="translate(235, 70)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="50" height="18" rx="9" fill="#0b0b10" stroke="rgba(168,85,247,0.4)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#a855f7" />
+                <rect x="0" y="0" width="50" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
+                <circle cx="8" cy="9" r="2.5" fill="#ff3355" />
                 <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">DESIGN</text>
               </g>
 
@@ -795,8 +795,8 @@ export function GrowthConvergence() {
                 transform="translate(200, 25)"
                 className={`transition-opacity duration-500 delay-700 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="54" height="18" rx="9" fill="#0b0b10" stroke="rgba(168,85,247,0.4)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#a855f7" />
+                <rect x="0" y="0" width="54" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.5)" strokeWidth="1" />
+                <circle cx="8" cy="9" r="2.5" fill="#ff3355" />
                 <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">EDITING</text>
               </g>
             </svg>
@@ -805,14 +805,14 @@ export function GrowthConvergence() {
           {/* Mobile Stacked Cards */}
           <div className="w-full space-y-4 mt-2">
             {/* Left Card: Content Strategy */}
-            <div className="rounded-2xl bg-[#0b0b10]/90 border border-pink-500/25 p-5 shadow-[0_4px_25px_-5px_rgba(236,72,153,0.15)]">
+            <div className="rounded-2xl bg-[#0b0b10]/90 border border-[#ff2626]/30 p-5 shadow-[0_4px_25px_-5px_rgba(255,38,38,0.15)]">
               <div className="flex items-center gap-3 mb-2.5">
-                <div className="w-9 h-9 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400">
+                <div className="w-9 h-9 rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/30 flex items-center justify-center text-[#ff2626]">
                   <Compass className="w-4 h-4" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white">Content Strategy</h3>
-                  <p className="text-[10px] tracking-wider uppercase font-semibold text-pink-400/90 font-mono">
+                  <p className="text-[10px] tracking-wider uppercase font-semibold text-[#ff4d4d] font-mono">
                     Foundational Pillar
                   </p>
                 </div>
@@ -823,14 +823,14 @@ export function GrowthConvergence() {
             </div>
 
             {/* Right Card: Content Creation */}
-            <div className="rounded-2xl bg-[#0b0b10]/90 border border-purple-500/25 p-5 shadow-[0_4px_25px_-5px_rgba(168,85,247,0.15)]">
+            <div className="rounded-2xl bg-[#0b0b10]/90 border border-[#ff3355]/30 p-5 shadow-[0_4px_25px_-5px_rgba(255,51,85,0.15)]">
               <div className="flex items-center gap-3 mb-2.5">
-                <div className="w-9 h-9 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400">
+                <div className="w-9 h-9 rounded-xl bg-[#ff3355]/10 border border-[#ff3355]/30 flex items-center justify-center text-[#ff3355]">
                   <Video className="w-4 h-4" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white">Content Creation</h3>
-                  <p className="text-[10px] tracking-wider uppercase font-semibold text-purple-400/90 font-mono">
+                  <p className="text-[10px] tracking-wider uppercase font-semibold text-[#ff667f] font-mono">
                     Execution Engine
                   </p>
                 </div>
@@ -844,7 +844,7 @@ export function GrowthConvergence() {
 
         {/* ============================================================== */}
         {/* BOTTOM SUPPORTING STATEMENT                                    */}
-        {/* Horizontal divider rule with centered pill badge               */}
+        {/* Red & White Accent Palette                                    */}
         {/* ============================================================== */}
         <div
           className={`relative mt-12 md:mt-16 pt-6 flex items-center justify-center transition-all duration-700 ease-out ${
@@ -855,8 +855,8 @@ export function GrowthConvergence() {
           <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-px bg-white/[0.08]" />
 
           {/* Centered Pill Badge */}
-          <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#070709] border border-white/[0.1] text-[11px] sm:text-xs font-semibold tracking-[0.16em] text-[#c4c0b8] uppercase shadow-lg">
-            <TrendingUp className="w-3.5 h-3.5 text-pink-400" />
+          <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#070709] border border-white/[0.1] text-[11px] sm:text-xs font-semibold tracking-[0.16em] text-[#f7f4ef] uppercase shadow-lg">
+            <TrendingUp className="w-3.5 h-3.5 text-[#ff2626]" />
             <span>ONE STRATEGY. BETTER CONTENT. REAL GROWTH.</span>
           </div>
         </div>
