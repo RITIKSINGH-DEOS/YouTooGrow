@@ -9,7 +9,7 @@ export function Footer() {
         {/* Primary Line: Copyright, Agency Name & Founder Location */}
         <p className="text-xs sm:text-[13px] text-[#6f6b67] tracking-normal font-normal flex flex-wrap items-center justify-center gap-x-3.5 sm:gap-x-5 gap-y-1">
           <span>&copy; {currentYear} YouTooGrow YouTube &amp; Instagram Growth Agency</span>
-          <span className="text-[#7f7a75]">Ritik Singh, Lucknow</span>
+          <span className="text-[#7f7a75]">Ritik Singh, IN</span>
         </p>
 
         {/* Secondary Line: Legal Links */}
