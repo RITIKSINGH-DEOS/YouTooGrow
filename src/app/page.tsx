@@ -4,7 +4,6 @@ import { QualificationQuiz } from "@/components/qualification/qualification-quiz
 import { ProcessSection } from "@/components/workflow/process-section";
 import { ProofInMotion } from "@/components/proof/proof-in-motion";
 import { CaseStudiesSection } from "@/components/case-studies/case-studies";
-import { TestimonialsSection } from "@/components/testimonials/testimonials";
 import { GrowthConvergence } from "@/components/growth-convergence/growth-convergence";
 import { Footer } from "@/components/navigation/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
@@ -49,16 +48,11 @@ export default function HomePage() {
           <CaseStudiesSection />
         </RevealOnScroll>
 
-        {/* 7. Testimonials Section */}
-        <RevealOnScroll>
-          <TestimonialsSection />
-        </RevealOnScroll>
-
-        {/* 8. Animated Growth Convergence Engine (Replaces Final CTA) */}
+        {/* 7. Animated Growth Convergence Engine */}
         <GrowthConvergence />
       </main>
 
-      {/* 9. Footer */}
+      {/* 8. Footer */}
       <Footer />
     </div>
   );
