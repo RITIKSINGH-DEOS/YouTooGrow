@@ -103,8 +103,8 @@ export function ProofInMotion() {
           </span>
         </h2>
 
-        <p className="max-w-lg mx-auto text-[#aaa6a0] text-xs leading-normal">
-          Real YouTube Studio &amp; Instagram analytics dashboards from channels we scale.
+        <p className="max-w-lg mx-auto text-[#aaa6a0] text-xs sm:text-[13px] leading-normal">
+          <span className="font-semibold text-[#f7f4ef]">15M+ Views</span> generated across our channels
         </p>
 
         <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] text-[#8a8680]">
