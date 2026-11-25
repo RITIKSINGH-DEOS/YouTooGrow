@@ -747,7 +747,7 @@ export function GrowthConvergence() {
 
               {/* Mobile Badges - Left (Strategy, SEO, Branding) */}
               <g
-                transform="translate(8, 265)"
+                transform="translate(4, 258)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="66" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
@@ -756,7 +756,7 @@ export function GrowthConvergence() {
               </g>
 
               <g
-                transform="translate(49, 205)"
+                transform="translate(49, 200)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="46" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
@@ -775,7 +775,7 @@ export function GrowthConvergence() {
 
               {/* Mobile Badges - Right (Engagement, Design, Editing) */}
               <g
-                transform="translate(286, 265)"
+                transform="translate(290, 258)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="66" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
@@ -784,7 +784,7 @@ export function GrowthConvergence() {
               </g>
 
               <g
-                transform="translate(265, 205)"
+                transform="translate(265, 200)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
                 <rect x="0" y="0" width="54" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
