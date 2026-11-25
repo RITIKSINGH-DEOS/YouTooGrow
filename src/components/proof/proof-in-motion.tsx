@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, X, ZoomIn } from "lucide-react";
 
 interface ProofImage {
   id: string;
@@ -22,7 +23,50 @@ const allProofImages: ProofImage[] = [
   { id: "proof-10", src: "/images/proof/analytics-10.png", alt: "YouTube Studio 73K Views Founder Audit" },
 ];
 
+function ProofTile({
+  item,
+  onSelect,
+}: {
+  item: ProofImage;
+  onSelect: (img: ProofImage) => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={() => onSelect(item)}
+      aria-label={`Inspect ${item.alt}`}
+      className="relative w-[230px] sm:w-[260px] md:w-[280px] aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.09] hover:border-[#ff2626]/70 shadow-[0_8px_24px_rgba(0,0,0,0.6)] hover:shadow-[0_12px_32px_rgba(255,38,38,0.22)] transition-all duration-300 shrink-0 bg-[#0e0e0e] group/tile text-left focus:outline-none"
+    >
+      <Image
+        src={item.src}
+        alt={item.alt}
+        fill
+        sizes="(max-width: 768px) 230px, 280px"
+        className="object-cover group-hover/tile:scale-105 transition-transform duration-500"
+      />
+      {/* Subtle Glass Gloss & Zoom Affordance on Hover */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-white/[0.05] opacity-0 group-hover/tile:opacity-100 transition-opacity duration-300 flex items-end justify-between p-2.5">
+        <span className="text-[10px] font-medium text-white/90 truncate pr-2">{item.alt}</span>
+        <span className="w-6 h-6 rounded-full bg-black/70 border border-white/20 flex items-center justify-center text-white shrink-0">
+          <ZoomIn className="w-3 h-3" />
+        </span>
+      </div>
+    </button>
+  );
+}
+
 export function ProofInMotion() {
+  const [selectedImage, setSelectedImage] = useState<ProofImage | null>(null);
+
+  useEffect(() => {
+    if (!selectedImage) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage]);
+
   // Staggered order for each track so each lane has a unique starting view
   const row1 = [...allProofImages, ...allProofImages];
   const row2 = [
@@ -42,7 +86,7 @@ export function ProofInMotion() {
     <section className="pt-4 pb-12 sm:pt-6 sm:pb-14 md:pt-6 md:pb-16 relative overflow-hidden" id="proof">
       {/* Background Soft Glow */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#ff2626]/[0.02] rounded-full blur-[140px] pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-[#ff2626]/[0.03] rounded-full blur-[140px] pointer-events-none"
         aria-hidden="true"
       />
 
@@ -63,9 +107,9 @@ export function ProofInMotion() {
           Real YouTube Studio &amp; Instagram analytics dashboards from channels we scale.
         </p>
 
-        <div className="mt-2 inline-flex items-center gap-1.5 text-[10px] text-[#6f6b67]">
+        <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] text-[#8a8680]">
           <ShieldCheck className="w-3 h-3 text-[#00b67a]" />
-          <span>Hover over any screenshot to pause</span>
+          <span>Hover to pause &bull; Click any dashboard to inspect</span>
         </div>
       </div>
 
@@ -76,18 +120,7 @@ export function ProofInMotion() {
 
         <div className="flex gap-3 w-max animate-marquee-left-medium group-hover:[animation-play-state:paused]">
           {row1.map((item, idx) => (
-            <div
-              key={`r1-${item.id}-${idx}`}
-              className="relative w-[230px] sm:w-[260px] md:w-[280px] aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/60 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 768px) 230px, 280px"
-                className="object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+            <ProofTile key={`r1-${item.id}-${idx}`} item={item} onSelect={setSelectedImage} />
           ))}
         </div>
       </div>
@@ -99,18 +132,7 @@ export function ProofInMotion() {
 
         <div className="flex gap-3 w-max animate-marquee-right-medium group-hover:[animation-play-state:paused]">
           {row2.map((item, idx) => (
-            <div
-              key={`r2-${item.id}-${idx}`}
-              className="relative w-[230px] sm:w-[260px] md:w-[280px] aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/60 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 768px) 230px, 280px"
-                className="object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+            <ProofTile key={`r2-${item.id}-${idx}`} item={item} onSelect={setSelectedImage} />
           ))}
         </div>
       </div>
@@ -122,21 +144,52 @@ export function ProofInMotion() {
 
         <div className="flex gap-3 w-max animate-marquee-left group-hover:[animation-play-state:paused]">
           {row3.map((item, idx) => (
-            <div
-              key={`r3-${item.id}-${idx}`}
-              className="relative w-[230px] sm:w-[260px] md:w-[280px] aspect-[16/10] rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.08] hover:border-[#ff2626]/60 shadow-md transition-all duration-300 shrink-0 bg-[#0e0e0e]"
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(max-width: 768px) 230px, 280px"
-                className="object-cover hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+            <ProofTile key={`r3-${item.id}-${idx}`} item={item} onSelect={setSelectedImage} />
           ))}
         </div>
       </div>
+
+      {/* Analytics Lightbox Preview Modal */}
+      {selectedImage && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedImage.alt}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-in fade-in duration-200"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div
+            className="relative max-w-3xl w-full rounded-2xl border border-white/15 bg-[#101012] p-3 sm:p-4 shadow-[0_25px_75px_rgba(0,0,0,0.95)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between gap-4 pb-3 px-1">
+              <div className="flex items-center gap-2 min-w-0">
+                <ShieldCheck className="w-4 h-4 text-[#00b67a] shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold text-[#f7f4ef] truncate">
+                  {selectedImage.alt}
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedImage(null)}
+                aria-label="Close analytics preview"
+                className="w-8 h-8 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/10 flex items-center justify-center text-[#aaa6a0] hover:text-white transition-colors shrink-0"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden border border-white/[0.08] bg-[#080808]">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 768px"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

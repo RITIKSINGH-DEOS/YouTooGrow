@@ -149,64 +149,72 @@ export function ProcessSection() {
         </div>
 
         {/* 4 Identical-Size Cards with Smooth Fade-and-Slide Tab Transition */}
-        <div
-          key={activeTab}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 transition-all duration-500 ease-out animate-in fade-in-0 slide-in-from-bottom-3"
-        >
-          {steps.map((item) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={item.step}
-                className="relative rounded-2xl border border-white/[0.08] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#131313] via-[#0f0f0f] to-[#0a0a0a] p-5 sm:p-6 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_45px_-10px_rgba(255,38,38,0.25)] hover:-translate-y-2 min-h-0 sm:min-h-[370px] cursor-default"
-              >
-                {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
-                <div
-                  className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_12px_#ff2626]"
-                  aria-hidden="true"
-                />
+        <div className="relative">
+          {/* Subtle Horizontal Pipeline Connector Line on Desktop */}
+          <div
+            className="hidden lg:block absolute top-[42px] inset-x-12 h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent pointer-events-none"
+            aria-hidden="true"
+          />
 
-                {/* Ambient Backlight Glow on Card Top on Hover */}
+          <div
+            key={activeTab}
+            className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 transition-all duration-500 ease-out animate-in fade-in-0 slide-in-from-bottom-3"
+          >
+            {steps.map((item) => {
+              const Icon = item.icon;
+              return (
                 <div
-                  className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-32 bg-[#ff2626]/0 group-hover:bg-[#ff2626]/12 rounded-full blur-2xl transition-all duration-500 pointer-events-none"
-                  aria-hidden="true"
-                />
+                  key={item.step}
+                  className="relative rounded-2xl border border-white/[0.09] hover:border-[#ff2626]/60 bg-gradient-to-b from-[#141416] via-[#0e0e10] to-[#09090b] p-5 sm:p-6 transition-all duration-300 ease-out flex flex-col justify-between group overflow-hidden shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.06)] hover:shadow-[0_22px_50px_-10px_rgba(255,38,38,0.28)] hover:-translate-y-2 min-h-0 sm:min-h-[370px] cursor-default"
+                >
+                  {/* Top Subtle Crimson Radiant Accent Beam on Hover */}
+                  <div
+                    className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_12px_#ff2626]"
+                    aria-hidden="true"
+                  />
 
-                <div className="relative z-10">
-                  {/* Top Bar with Icon & Luxury Ghost Numeral */}
-                  <div className="flex items-center justify-between mb-3 sm:mb-4">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/20 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white group-hover:shadow-[0_0_18px_rgba(255,38,38,0.5)] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
+                  {/* Ambient Backlight Glow on Card Top on Hover */}
+                  <div
+                    className="absolute -top-16 left-1/2 -translate-x-1/2 w-48 h-32 bg-[#ff2626]/0 group-hover:bg-[#ff2626]/12 rounded-full blur-2xl transition-all duration-500 pointer-events-none"
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative z-10">
+                    {/* Top Bar with Icon & Luxury Ghost Numeral */}
+                    <div className="flex items-center justify-between mb-3 sm:mb-4">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#ff2626]/10 border border-[#ff2626]/25 flex items-center justify-center text-[#ff2626] group-hover:bg-[#ff2626] group-hover:text-white group-hover:shadow-[0_0_18px_rgba(255,38,38,0.5)] group-hover:scale-105 transition-all duration-300 shadow-sm shrink-0">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:scale-110" />
+                      </div>
+                      <span className="font-serif italic text-2xl sm:text-4xl font-normal text-white/[0.08] group-hover:text-[#ff2626]/35 group-hover:scale-105 transition-all duration-300 select-none">
+                        {item.step}
+                      </span>
                     </div>
-                    <span className="font-serif italic text-2xl sm:text-4xl font-normal text-white/[0.08] group-hover:text-[#ff2626]/35 group-hover:scale-105 transition-all duration-300 select-none">
-                      {item.step}
+
+                    {/* Stage Micro-Badge */}
+                    <span className="inline-block px-2 py-0.5 rounded bg-[#ff2626]/[0.08] border border-[#ff2626]/20 text-[9px] sm:text-[9.5px] font-bold uppercase tracking-[0.2em] text-[#ff4d4d] mb-2">
+                      {item.stageBadge}
                     </span>
+
+                    {/* Step Title with Harmonized Min-Height on Desktop */}
+                    <h3 className="text-sm sm:text-lg font-bold text-[#f7f4ef] group-hover:text-white transition-colors mb-1.5 sm:mb-2.5 tracking-tight leading-snug min-h-0 sm:min-h-[48px] flex items-start">
+                      {item.title}
+                    </h3>
+
+                    {/* Step Description with Harmonized Min-Height on Desktop */}
+                    <p className="text-xs sm:text-sm text-[#aaa6a0] leading-relaxed min-h-0 sm:min-h-[72px]">
+                      {item.description}
+                    </p>
                   </div>
 
-                  {/* Stage Micro-Badge */}
-                  <span className="text-[9.5px] sm:text-[10px] font-bold uppercase tracking-[0.2em] text-[#ff2626] block mb-1 sm:mb-1.5">
-                    {item.stageBadge}
-                  </span>
-
-                  {/* Step Title with Harmonized Min-Height on Desktop */}
-                  <h3 className="text-sm sm:text-lg font-bold text-[#f7f4ef] group-hover:text-white transition-colors mb-1.5 sm:mb-2.5 tracking-tight leading-snug min-h-0 sm:min-h-[48px] flex items-start">
-                    {item.title}
-                  </h3>
-
-                  {/* Step Description with Harmonized Min-Height on Desktop */}
-                  <p className="text-xs sm:text-sm text-[#aaa6a0] leading-relaxed min-h-0 sm:min-h-[72px]">
-                    {item.description}
-                  </p>
+                  {/* Deliverable Footer Anchor */}
+                  <div className="relative z-10 pt-2.5 sm:pt-3.5 border-t border-white/[0.06] flex items-center gap-2 text-[10.5px] sm:text-[11px] text-[#8f8b85] group-hover:text-[#cfcac0] transition-colors mt-3 sm:mt-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00b67a] shrink-0 shadow-[0_0_6px_#00b67a]" />
+                    <span className="font-medium truncate">{item.deliverable}</span>
+                  </div>
                 </div>
-
-                {/* Deliverable Footer Anchor */}
-                <div className="relative z-10 pt-2.5 sm:pt-3.5 border-t border-white/[0.06] flex items-center gap-2 text-[10.5px] sm:text-[11px] text-[#8f8b85] group-hover:text-[#cfcac0] transition-colors mt-3 sm:mt-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00b67a] shrink-0 shadow-[0_0_6px_#00b67a]" />
-                  <span className="font-medium truncate">{item.deliverable}</span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

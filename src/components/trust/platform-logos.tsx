@@ -113,34 +113,44 @@ export function PlatformLogos() {
   return (
     <section
       aria-label="Platforms and Creative Ecosystem Stack"
-      className="relative py-4 sm:py-5 border-y border-white/[0.06] bg-[#0a0a0a] overflow-hidden"
+      className="relative py-5 sm:py-6 bg-[#0a0a0a] overflow-hidden"
     >
-      {/* Soft Vignette Gradients on Left and Right Edges */}
+      {/* Hairline Top & Bottom Gradient Dividers */}
       <div
-        className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-36 bg-gradient-to-r from-[#080808] to-transparent z-10"
+        className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-36 bg-gradient-to-l from-[#080808] to-transparent z-10"
+        className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent"
+        aria-hidden="true"
+      />
+
+      {/* Soft Vignette Gradients on Left and Right Edges */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-40 bg-gradient-to-r from-[#080808] via-[#080808]/80 to-transparent z-10"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-40 bg-gradient-to-l from-[#080808] via-[#080808]/80 to-transparent z-10"
         aria-hidden="true"
       />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-4 text-center">
-        <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#78746e]">
+        <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.24em] text-[#78746e]">
           Platforms &amp; Production Stack We Scale
         </span>
       </div>
 
       {/* Marquee Track with Slow Smooth Speed and Pause on Hover */}
       <div className="flex overflow-hidden select-none group">
-        <div className="flex shrink-0 items-center gap-12 sm:gap-16 md:gap-20 animate-marquee-left-slow group-hover:[animation-play-state:paused]">
+        <div className="flex shrink-0 items-center gap-6 sm:gap-10 md:gap-12 animate-marquee-left-slow group-hover:[animation-play-state:paused]">
           {marqueeItems.map((logo, idx) => (
             <div
               key={`${logo.id}-${idx}`}
-              className="inline-flex items-center gap-3 text-white/80 hover:text-white transition-opacity duration-200 shrink-0 cursor-default opacity-85 hover:opacity-100"
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-transparent hover:border-white/[0.08] hover:bg-white/[0.03] text-white/75 hover:text-white transition-all duration-300 shrink-0 cursor-default"
             >
               {logo.renderIcon()}
-              <span className="text-sm sm:text-base md:text-lg font-bold tracking-tight text-[#f7f4ef]/90">
+              <span className="text-sm sm:text-base font-bold tracking-tight text-[#f7f4ef]/85">
                 {logo.name}
               </span>
             </div>
