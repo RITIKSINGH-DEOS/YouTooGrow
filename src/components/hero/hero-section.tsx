@@ -137,9 +137,11 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
                 </div>
 
                 {/* Card Footer Bar */}
-                <div className="absolute bottom-0 inset-x-0 px-3.5 py-2.5 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex items-center justify-between text-[10px] text-[#aaa6a0] z-10">
+                <div className="absolute bottom-0 inset-x-0 px-3 sm:px-3.5 py-2 sm:py-2.5 bg-gradient-to-t from-black/95 via-black/60 to-transparent flex items-center justify-between gap-2 text-[9px] sm:text-[10px] text-[#aaa6a0] z-10 whitespace-nowrap">
                   <span className="font-medium text-white/90">YouTooGrow Content Operations</span>
-                  <span className="font-mono text-[9.5px] tracking-wide">Research &bull; Production &bull; Optimization</span>
+                  <span className="hidden min-[420px]:inline font-mono text-[9px] sm:text-[9.5px] tracking-wide">
+                    Research &bull; Production &bull; Optimization
+                  </span>
                 </div>
               </div>
             )}
@@ -166,6 +168,9 @@ export function HeroSection({ videoSrc }: HeroSectionProps) {
       {/* Transparent Information Modal */}
       {infoModalOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Founder Introduction"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-150"
           onClick={() => setInfoModalOpen(false)}
         >

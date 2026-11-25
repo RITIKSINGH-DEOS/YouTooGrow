@@ -257,6 +257,9 @@ export function CaseStudiesSection() {
       {/* Video Preview / Placeholder Modal */}
       {selectedShort && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedShort.title}
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in-0 duration-200"
           onClick={() => setSelectedShort(null)}
         >

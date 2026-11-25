@@ -51,11 +51,17 @@ export function TestimonialsSection() {
               </span>
 
               <div className="relative z-10">
-                {/* 5 Stars Rating Bar */}
-                <div className="flex items-center gap-1 mb-4 text-[#ff2626]">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-current drop-shadow-[0_0_6px_rgba(255,38,38,0.35)]" />
-                  ))}
+                {/* Top Row: 5 Stars Rating + Verified Metric Pill */}
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <div className="flex items-center gap-1 text-[#ff2626]">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-current drop-shadow-[0_0_6px_rgba(255,38,38,0.35)]" />
+                    ))}
+                  </div>
+
+                  <span className="text-[10px] font-semibold text-[#00b67a] bg-[#00b67a]/10 border border-[#00b67a]/25 px-2.5 py-0.5 rounded-full shrink-0 shadow-[0_0_12px_rgba(0,182,122,0.12)]">
+                    {item.metricBadge}
+                  </span>
                 </div>
 
                 {/* Feedback Quote */}
@@ -64,27 +70,23 @@ export function TestimonialsSection() {
                 </p>
               </div>
 
-              {/* Author & Badge */}
-              <div className="relative z-10 pt-4 border-t border-white/[0.07] flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#ff2626]/25 to-[#1a1a1c] border border-[#ff2626]/30 flex items-center justify-center font-bold text-[11px] text-[#ff4d4d] shrink-0 shadow-[0_0_14px_rgba(255,38,38,0.18)]">
-                    {item.clientName
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                  <div className="min-w-0">
-                    <h4 className="text-xs font-bold text-[#f7f4ef] flex items-center gap-1">
-                      <span className="truncate">{item.clientName}</span>
-                      <CheckCircle className="w-3 h-3 text-[#00b67a] shrink-0" />
-                    </h4>
-                    <p className="text-[10px] text-[#aaa6a0] truncate">{item.channelOrRole}</p>
-                  </div>
+              {/* Author Row (Full Name & Role Unobstructed) */}
+              <div className="relative z-10 pt-4 border-t border-white/[0.07] flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#ff2626]/25 to-[#1a1a1c] border border-[#ff2626]/30 flex items-center justify-center font-bold text-[11px] text-[#ff4d4d] shrink-0 shadow-[0_0_14px_rgba(255,38,38,0.18)]">
+                  {item.clientName
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
                 </div>
-
-                <span className="text-[10px] font-semibold text-[#00b67a] bg-[#00b67a]/10 border border-[#00b67a]/25 px-2.5 py-0.5 rounded-full shrink-0 shadow-[0_0_12px_rgba(0,182,122,0.12)]">
-                  {item.metricBadge}
-                </span>
+                <div className="min-w-0">
+                  <h4 className="text-xs sm:text-[13px] font-bold text-[#f7f4ef] flex items-center gap-1.5">
+                    <span>{item.clientName}</span>
+                    <CheckCircle className="w-3.5 h-3.5 text-[#00b67a] shrink-0" />
+                  </h4>
+                  <p className="text-[10.5px] sm:text-[11px] text-[#aaa6a0] leading-snug mt-0.5">
+                    {item.channelOrRole}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
