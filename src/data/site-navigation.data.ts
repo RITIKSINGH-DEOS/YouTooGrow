@@ -21,7 +21,6 @@ export const footerNavigation = {
     { label: "Proof in Motion", href: "#proof" },
     { label: "Case Studies", href: "#case-studies" },
     { label: "Why YouTooGrow", href: "#why-us" },
-    { label: "Testimonials", href: "#testimonials" },
   ],
   socials: [
     { label: "YouTube", href: "https://youtube.com", target: "_blank" },
