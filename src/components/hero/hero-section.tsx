@@ -54,7 +54,7 @@ export function HeroSection() {
         <div className="relative w-full max-w-[480px] sm:max-w-[540px] md:max-w-[560px] mx-auto rounded-xl sm:rounded-2xl p-[1px] bg-gradient-to-b from-white/20 via-white/[0.08] to-white/[0.03] shadow-[0_24px_65px_rgba(0,0,0,0.9),0_0_45px_rgba(255,38,38,0.08)] group mb-3 sm:mb-4">
           <div className="relative aspect-video w-full rounded-[11px] sm:rounded-[15px] overflow-hidden bg-[#101010]">
             <Image
-              src="/images/introduction/founder-intro.jpg"
+              src="/images/introduction/founder-studio.jpg"
               alt="YouTooGrow Founder"
               fill
               priority
