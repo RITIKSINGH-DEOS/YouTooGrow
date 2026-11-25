@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import { DM_Sans, DM_Serif_Display, Syne } from "next/font/google";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -13,6 +13,13 @@ const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
   variable: "--font-dm-serif",
   weight: ["400"],
+  display: "swap",
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  weight: ["700", "800"],
   display: "swap",
 });
 
@@ -43,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${dmSerif.variable} ${syne.variable}`}>
       <body className="min-h-screen bg-[#080808] text-[#f7f4ef] font-sans antialiased selection:bg-[#ff2626] selection:text-white">
         {children}
       </body>

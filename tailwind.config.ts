@@ -35,6 +35,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
         serif: ["var(--font-dm-serif)", "Georgia", "serif"],
+        display: ["var(--font-syne)", "var(--font-dm-sans)", "sans-serif"],
       },
       animation: {
         "marquee-left": "marqueeLeft 35s linear infinite",
