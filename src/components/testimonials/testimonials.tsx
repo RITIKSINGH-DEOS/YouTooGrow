@@ -1,13 +1,19 @@
 import { clientTestimonials } from "@/data/testimonials.data";
-import { MessageSquareQuote, Star, CheckCircle } from "lucide-react";
+import { Star, CheckCircle } from "lucide-react";
 
 export function TestimonialsSection() {
   return (
-    <section className="pt-6 sm:pt-8 md:pt-10 pb-16 md:pb-24 relative bg-[#0a0a0a] border-t border-white/[0.06]" id="testimonials">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section className="pt-8 sm:pt-10 md:pt-12 pb-16 md:pb-24 relative bg-[#0a0a0a] border-t border-white/[0.06] overflow-hidden" id="testimonials">
+      {/* Subtle Ambient Glow */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] h-[320px] bg-[#ff2626]/[0.03] rounded-full blur-[130px] pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#ff2626] block mb-1">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#ff2626] block mb-1.5">
             Partner Feedback
           </span>
 
@@ -28,13 +34,27 @@ export function TestimonialsSection() {
           {clientTestimonials.map((item) => (
             <div
               key={item.id}
-              className="rounded-xl border border-white/[0.08] bg-[#101010] p-6 flex flex-col justify-between hover:border-white/20 transition-all duration-200 group"
+              className="relative rounded-2xl border border-white/[0.09] hover:border-[#ff2626]/45 bg-gradient-to-b from-[#141416] via-[#0f0f11] to-[#0a0a0c] p-6 flex flex-col justify-between transition-all duration-300 group overflow-hidden shadow-[0_12px_35px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.06)] hover:shadow-[0_20px_45px_-10px_rgba(255,38,38,0.2)] hover:-translate-y-1.5"
             >
-              <div>
+              {/* Top Crimson Hover Highlight Line */}
+              <div
+                className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#ff2626] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_10px_#ff2626]"
+                aria-hidden="true"
+              />
+
+              {/* Subtle Editorial Quote Watermark */}
+              <span
+                className="absolute top-2 right-5 font-serif italic text-6xl text-white/[0.04] group-hover:text-[#ff2626]/15 transition-colors duration-300 select-none pointer-events-none leading-none"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </span>
+
+              <div className="relative z-10">
                 {/* 5 Stars Rating Bar */}
                 <div className="flex items-center gap-1 mb-4 text-[#ff2626]">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                    <Star key={i} className="w-3.5 h-3.5 fill-current drop-shadow-[0_0_6px_rgba(255,38,38,0.35)]" />
                   ))}
                 </div>
 
@@ -45,24 +65,24 @@ export function TestimonialsSection() {
               </div>
 
               {/* Author & Badge */}
-              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#ff2626]/20 to-[#181818] border border-white/10 flex items-center justify-center font-bold text-[11px] text-[#ff2626]">
+              <div className="relative z-10 pt-4 border-t border-white/[0.07] flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#ff2626]/25 to-[#1a1a1c] border border-[#ff2626]/30 flex items-center justify-center font-bold text-[11px] text-[#ff4d4d] shrink-0 shadow-[0_0_14px_rgba(255,38,38,0.18)]">
                     {item.clientName
                       .split(" ")
                       .map((n) => n[0])
                       .join("")}
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="text-xs font-bold text-[#f7f4ef] flex items-center gap-1">
-                      <span>{item.clientName}</span>
-                      <CheckCircle className="w-3 h-3 text-[#00b67a]" />
+                      <span className="truncate">{item.clientName}</span>
+                      <CheckCircle className="w-3 h-3 text-[#00b67a] shrink-0" />
                     </h4>
-                    <p className="text-[10px] text-[#aaa6a0]">{item.channelOrRole}</p>
+                    <p className="text-[10px] text-[#aaa6a0] truncate">{item.channelOrRole}</p>
                   </div>
                 </div>
 
-                <span className="text-[10px] font-semibold text-[#00b67a] bg-[#00b67a]/10 px-2 py-0.5 rounded">
+                <span className="text-[10px] font-semibold text-[#00b67a] bg-[#00b67a]/10 border border-[#00b67a]/25 px-2.5 py-0.5 rounded-full shrink-0 shadow-[0_0_12px_rgba(0,182,122,0.12)]">
                   {item.metricBadge}
                 </span>
               </div>

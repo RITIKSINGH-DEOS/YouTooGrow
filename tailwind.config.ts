@@ -43,6 +43,8 @@ const config: Config = {
         "marquee-right": "marqueeRight 35s linear infinite",
         "marquee-right-medium": "marqueeRight 52s linear infinite",
         "pulse-subtle": "pulseSubtle 3s ease-in-out infinite",
+        "fade-up": "fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "ping-slow": "pingSlow 2.4s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
       keyframes: {
         marqueeLeft: {
@@ -56,6 +58,14 @@ const config: Config = {
         pulseSubtle: {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.6" },
+        },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        pingSlow: {
+          "0%": { transform: "scale(1)", opacity: "0.55" },
+          "75%, 100%": { transform: "scale(1.65)", opacity: "0" },
         },
       },
     },

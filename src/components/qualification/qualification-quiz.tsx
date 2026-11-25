@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ArrowRight, ArrowLeft, CheckCircle2, Sparkles, Send } from "lucide-react";
 
 interface QuestionOption {
@@ -59,18 +59,40 @@ export function QualificationQuiz() {
   const activeQuestion = templateQuestions[currentStep];
   const progressPercentage = ((currentStep + 1) / templateQuestions.length) * 100;
 
-  const handleSelectOption = (optionId: string) => {
-    setAnswers((prev) => ({ ...prev, [activeQuestion.id]: optionId }));
+  const handleSelectOption = useCallback(
+    (optionId: string) => {
+      setAnswers((prev) => ({ ...prev, [activeQuestion.id]: optionId }));
 
-    // Auto-advance to next question smoothly after 200ms
-    setTimeout(() => {
-      if (currentStep < templateQuestions.length - 1) {
-        setCurrentStep((prev) => prev + 1);
-      } else {
-        setIsCompleted(true);
+      // Auto-advance to next question smoothly after 220ms
+      setTimeout(() => {
+        if (currentStep < templateQuestions.length - 1) {
+          setCurrentStep((prev) => prev + 1);
+        } else {
+          setIsCompleted(true);
+        }
+      }, 220);
+    },
+    [activeQuestion.id, currentStep]
+  );
+
+  // Enable keyboard shortcuts (A, B, C) for rapid option selection
+  useEffect(() => {
+    if (isCompleted || submitted) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) return;
+
+      const pressed = e.key.toUpperCase();
+      const matched = activeQuestion.options.find((opt) => opt.id === pressed);
+      if (matched) {
+        handleSelectOption(matched.id);
       }
-    }, 220);
-  };
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeQuestion.options, handleSelectOption, isCompleted, submitted]);
 
   const handlePrev = () => {
     if (currentStep > 0) {
@@ -127,17 +149,24 @@ export function QualificationQuiz() {
           </p>
         </div>
 
-        {/* Interactive Dark Glass Quiz Container */}
-        <div className="relative rounded-2xl border border-white/[0.1] bg-[#0c0c0c] shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden">
-          {/* Top Sleek Progress Bar */}
-          <div className="h-1 bg-white/[0.06] w-full absolute top-0 inset-x-0">
+        {/* Interactive Dark Glass Quiz Container with 1px Gradient Rim */}
+        <div className="relative rounded-2xl p-[1px] bg-gradient-to-b from-white/15 via-white/[0.06] to-white/[0.02] shadow-[0_25px_65px_rgba(0,0,0,0.9),0_0_50px_rgba(255,38,38,0.06)]">
+          <div className="relative rounded-[15px] bg-gradient-to-b from-[#111113] via-[#0c0c0d] to-[#09090a] overflow-hidden">
+            {/* Top Subtle Spotlight */}
             <div
-              className="h-full bg-gradient-to-r from-[#ff4d4d] to-[#ff2626] transition-all duration-400 ease-out"
-              style={{ width: `${isCompleted ? 100 : progressPercentage}%` }}
+              className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-32 bg-[#ff2626]/[0.07] rounded-full blur-3xl pointer-events-none"
+              aria-hidden="true"
             />
-          </div>
 
-          <div className="p-6 sm:p-10 md:p-12">
+            {/* Top Sleek Progress Bar with Glowing Tip */}
+            <div className="h-1 bg-white/[0.05] w-full absolute top-0 inset-x-0 z-10">
+              <div
+                className="h-full bg-gradient-to-r from-[#d90808] via-[#ff2626] to-[#ff5c5c] shadow-[0_0_12px_rgba(255,38,38,0.7)] transition-all duration-400 ease-out"
+                style={{ width: `${isCompleted ? 100 : progressPercentage}%` }}
+              />
+            </div>
+
+            <div className="relative z-10 p-6 sm:p-10 md:p-12">
             {!isCompleted ? (
               <div className="space-y-6 sm:space-y-8 animate-in fade-in duration-300">
                 {/* Header Sub-bar */}
@@ -291,7 +320,7 @@ export function QualificationQuiz() {
                       placeholder="e.g. Alex Morgan"
                       value={contactInfo.name}
                       onChange={(e) => setContactInfo({ ...contactInfo, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.08] text-[#f7f4ef] placeholder-[#55524e] text-xs sm:text-sm focus:outline-none focus:border-[#ff2626] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-[#141416] border border-white/[0.1] text-[#f7f4ef] placeholder-[#55524e] text-xs sm:text-sm focus:outline-none focus:border-[#ff2626] focus:ring-2 focus:ring-[#ff2626]/20 transition-all"
                     />
                   </div>
 
@@ -306,7 +335,7 @@ export function QualificationQuiz() {
                       placeholder="e.g. alex@company.com"
                       value={contactInfo.email}
                       onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.08] text-[#f7f4ef] placeholder-[#55524e] text-xs sm:text-sm focus:outline-none focus:border-[#ff2626] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-[#141416] border border-white/[0.1] text-[#f7f4ef] placeholder-[#55524e] text-xs sm:text-sm focus:outline-none focus:border-[#ff2626] focus:ring-2 focus:ring-[#ff2626]/20 transition-all"
                     />
                   </div>
 
@@ -321,7 +350,7 @@ export function QualificationQuiz() {
                       placeholder="youtube.com/@channel or @handle"
                       value={contactInfo.channelUrl}
                       onChange={(e) => setContactInfo({ ...contactInfo, channelUrl: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#141414] border border-white/[0.08] text-[#f7f4ef] placeholder-[#55524e] text-xs sm:text-sm focus:outline-none focus:border-[#ff2626] transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-[#141416] border border-white/[0.1] text-[#f7f4ef] placeholder-[#55524e] text-xs sm:text-sm focus:outline-none focus:border-[#ff2626] focus:ring-2 focus:ring-[#ff2626]/20 transition-all"
                     />
                   </div>
 
@@ -347,6 +376,7 @@ export function QualificationQuiz() {
                 </div>
               </div>
             )}
+            </div>
           </div>
         </div>
       </div>

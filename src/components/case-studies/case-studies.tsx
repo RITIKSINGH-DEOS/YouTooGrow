@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { featuredShorts, FeaturedShort } from "@/data/featured-shorts.data";
 import {
   Youtube,
@@ -17,6 +17,15 @@ export function CaseStudiesSection() {
   const [selectedShort, setSelectedShort] = useState<FeaturedShort | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!selectedShort) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedShort(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedShort]);
 
   const filteredShorts =
     activePlatform === "ALL"
@@ -210,10 +219,10 @@ export function CaseStudiesSection() {
 
                 {/* Center High-Gloss Play Button */}
                 <div className="relative z-10 flex flex-col items-center justify-center py-6">
-                  <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-[#ff2626] group-hover:border-[#ff2626] transition-all duration-300 shadow-[0_4px_25px_rgba(0,0,0,0.6)]">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/25 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-[#ff2626] group-hover:border-[#ff2626] group-hover:shadow-[0_0_25px_rgba(255,38,38,0.55)] transition-all duration-300 shadow-[0_4px_25px_rgba(0,0,0,0.6)]">
                     <Play className="w-5 h-5 ml-0.5 fill-current transition-transform" />
                   </div>
-                  <span className="text-[10px] tracking-wider uppercase font-semibold text-white/50 group-hover:text-white/80 transition-colors mt-2.5">
+                  <span className="text-[10px] tracking-wider uppercase font-semibold text-white/50 group-hover:text-white/85 transition-colors mt-2.5">
                     {item.videoUrl ? "Play Video" : "Preview Hook"}
                   </span>
                 </div>
