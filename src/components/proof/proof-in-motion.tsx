@@ -100,17 +100,20 @@ export function ProofInMotion() {
         </div>
 
         <h2 className="tracking-tight mb-2.5">
-          <span className="block text-4xl sm:text-5xl md:text-[54px] font-black leading-[1.02]">
-            <span className="bg-gradient-to-r from-[#ff4d4d] via-[#ff2626] to-[#e00707] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(255,38,38,0.4)]">
-              15M+
+          <span className="block leading-[1.02]">
+            <span className="font-display font-extrabold text-4xl sm:text-5xl md:text-[56px] tracking-[-0.03em] bg-gradient-to-b from-[#ff5c5c] via-[#ff2626] to-[#c90808] bg-clip-text text-transparent drop-shadow-[0_0_26px_rgba(255,38,38,0.35)]">
+              15M
+            </span>
+            <span className="font-display font-bold text-2xl sm:text-3xl md:text-[38px] text-[#ff4040] align-top ml-0.5 drop-shadow-[0_0_18px_rgba(255,38,38,0.35)]">
+              +
             </span>{" "}
-            <span className="bg-gradient-to-b from-[#ffffff] via-[#f7f4ef] to-[#d6d1c7] bg-clip-text text-transparent">
+            <span className="font-sans font-semibold text-3xl sm:text-4xl md:text-[46px] tracking-tight bg-gradient-to-b from-[#ffffff] via-[#f7f4ef] to-[#cbc5ba] bg-clip-text text-transparent ml-1">
               Views
             </span>
           </span>
-          <span className="block text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#e8e4dc] mt-1">
+          <span className="block text-sm sm:text-lg md:text-[21px] font-medium tracking-tight text-[#d2cec6] mt-1.5">
             generated across our{" "}
-            <span className="font-serif italic font-normal text-[#ff2626]">
+            <span className="font-serif italic font-normal text-[#ff2626] text-base sm:text-xl md:text-[23px]">
               channels
             </span>
           </span>
