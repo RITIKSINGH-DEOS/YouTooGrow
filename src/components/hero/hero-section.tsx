@@ -59,12 +59,12 @@ export function HeroSection() {
               fill
               priority
               sizes="(max-width: 768px) 100vw, 560px"
-              className="object-cover object-top sm:object-center group-hover:scale-[1.03] transition-transform duration-700 brightness-[0.95] contrast-[1.04]"
+              className="object-cover object-top sm:object-center group-hover:scale-[1.03] transition-transform duration-700"
             />
 
-            {/* Subtle Edge Blending Vignette */}
+            {/* Subtle Bottom Edge Blending Vignette */}
             <div
-              className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none"
+              className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"
               aria-hidden="true"
             />
           </div>
