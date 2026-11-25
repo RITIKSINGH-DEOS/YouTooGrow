@@ -78,8 +78,8 @@ export function GrowthConvergence() {
   const isDrawingDesktop = step >= 2;
   const desktopDashOffset = isDrawingDesktop ? 0 : desktopPathLength;
 
-  // Mobile path length is ~180px. We use 200 for complete coverage.
-  const mobilePathLength = 200;
+  // Mobile path length is ~278px. We use 290 for complete coverage.
+  const mobilePathLength = 290;
   const isDrawingMobile = step >= 2;
   const mobileDashOffset = isDrawingMobile ? 0 : mobilePathLength;
 
@@ -607,41 +607,43 @@ export function GrowthConvergence() {
 
         {/* ============================================================== */}
         {/* MOBILE VIEWPORT (< 768px)                                      */}
-        {/* Clean vertical layout with circular BOOK A CALL at top summit   */}
+        {/* Tall vertical sweep with circular BOOK A CALL at top summit    */}
         {/* ============================================================== */}
         <div className="md:hidden flex flex-col items-center">
           {/* Mobile Animated SVG Flow with Circular Summit Button */}
-          <div className="relative w-full max-w-[360px] h-[200px] my-2">
+          <div className="relative w-full max-w-[360px] h-[305px] min-[380px]:h-[325px] my-3">
             {/* Mobile Top Circular BOOK A CALL Button (reveals when step >= 3) */}
-            <div className="absolute top-[40px] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+            <div className="absolute top-[17.5%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
               <Link
                 href="mailto:contact@youtoogrow.com?subject=Strategy%20Call%20Application%20-%20YouTooGrow"
-                className={`group relative flex flex-col items-center justify-center w-20 h-20 rounded-full bg-gradient-to-b from-[#f83232] via-[#e61919] to-[#b30808] text-white shadow-[0_0_18px_rgba(255,38,38,0.35),0_4px_14px_rgba(0,0,0,0.6),inset_0_1.5px_2px_rgba(255,255,255,0.3),inset_0_-2px_4px_rgba(0,0,0,0.5)] hover:shadow-[0_0_26px_rgba(255,38,38,0.5),0_6px_18px_rgba(0,0,0,0.7)] active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
+                className={`group relative flex flex-col items-center justify-center w-[88px] h-[88px] rounded-full bg-gradient-to-b from-[#f83232] via-[#e61919] to-[#b30808] text-white shadow-[0_0_20px_rgba(255,38,38,0.35),0_5px_16px_rgba(0,0,0,0.6),inset_0_1.5px_2px_rgba(255,255,255,0.3),inset_0_-2px_5px_rgba(0,0,0,0.5)] hover:shadow-[0_0_28px_rgba(255,38,38,0.5),0_6px_18px_rgba(0,0,0,0.7)] active:scale-95 transition-all duration-700 cubic-bezier(0.34, 1.56, 0.64, 1) cursor-pointer select-none ${
                   step >= 3
                     ? "scale-100 opacity-100 pointer-events-auto"
                     : "scale-50 opacity-0 pointer-events-none"
                 }`}
               >
-                <div className="absolute inset-1 rounded-full border border-white/20 pointer-events-none" />
+                <div className="absolute inset-1.5 rounded-full border border-white/20 pointer-events-none" />
                 <div className="flex flex-col items-center justify-center text-center leading-[1.15] select-none">
-                  <span className="text-[10px] font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                  <span className="text-[11px] font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                     BOOK
                   </span>
-                  <span className="text-[10px] font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+                  <span className="text-[11px] font-black tracking-widest text-white uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
                     A CALL
                   </span>
                 </div>
               </Link>
             </div>
 
-            <svg viewBox="0 0 360 200" className="w-full h-full overflow-visible" aria-hidden="true">
+            <svg viewBox="0 0 360 320" className="w-full h-full overflow-visible" aria-hidden="true">
               <defs>
                 <linearGradient id="mobLeftGrad" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#ff2626" />
+                  <stop offset="55%" stopColor="#ff4d4d" />
                   <stop offset="100%" stopColor="#ffa3a3" />
                 </linearGradient>
                 <linearGradient id="mobRightGrad" x1="100%" y1="100%" x2="0%" y2="0%">
                   <stop offset="0%" stopColor="#e11d48" />
+                  <stop offset="55%" stopColor="#ff3355" />
                   <stop offset="100%" stopColor="#ffa3b0" />
                 </linearGradient>
               </defs>
@@ -649,98 +651,154 @@ export function GrowthConvergence() {
               {/* Ambient radial glow at summit (Balanced) */}
               <circle
                 cx="180"
-                cy="40"
-                r="48"
+                cy="56"
+                r="66"
                 fill="url(#sphereRadialGlow)"
                 className={`transition-all duration-1000 ${
                   step >= 3 ? "opacity-100 scale-100" : "opacity-0 scale-50"
                 }`}
               />
 
-              {/* Left Line */}
-              <path
-                d="M 45 180 C 85 180, 115 90, 140 40"
-                fill="none"
-                stroke="url(#mobLeftGrad)"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                filter="drop-shadow(0 0 8px rgba(255,38,38,0.7))"
-                style={{
-                  strokeDasharray: mobilePathLength,
-                  strokeDashoffset: mobileDashOffset,
-                  transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
-                }}
-              />
+              {/* Subtle Orbital Rings around mobile summit */}
+              <g
+                className={`transition-all duration-1000 ${
+                  step >= 3 ? "opacity-100 scale-100" : "opacity-0 scale-75"
+                }`}
+              >
+                <circle
+                  cx="180"
+                  cy="56"
+                  r="58"
+                  fill="none"
+                  stroke="rgba(255, 38, 38, 0.24)"
+                  strokeWidth="0.9"
+                  strokeDasharray="3 5"
+                />
+                <circle
+                  cx="180"
+                  cy="56"
+                  r="74"
+                  fill="none"
+                  stroke="rgba(255, 255, 255, 0.12)"
+                  strokeWidth="0.7"
+                  strokeDasharray="2 5"
+                />
+              </g>
 
-              {/* Right Line */}
-              <path
-                d="M 315 180 C 275 180, 245 90, 220 40"
-                fill="none"
-                stroke="url(#mobRightGrad)"
-                strokeWidth="3.5"
-                strokeLinecap="round"
-                filter="drop-shadow(0 0 8px rgba(225,29,72,0.7))"
-                style={{
-                  strokeDasharray: mobilePathLength,
-                  strokeDashoffset: mobileDashOffset,
-                  transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
-                }}
-              />
+              {/* Left Curve - Tall Dramatic Sweep */}
+              <g>
+                <path
+                  d="M 42 304 C 96 304, 118 175, 136 56"
+                  fill="none"
+                  stroke="url(#mobLeftGrad)"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  opacity="0.45"
+                  filter="drop-shadow(0 0 8px rgba(255,38,38,0.6))"
+                  style={{
+                    strokeDasharray: mobilePathLength,
+                    strokeDashoffset: mobileDashOffset,
+                    transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+                  }}
+                />
+                <path
+                  d="M 42 304 C 96 304, 118 175, 136 56"
+                  fill="none"
+                  stroke="#fff5f5"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  style={{
+                    strokeDasharray: mobilePathLength,
+                    strokeDashoffset: mobileDashOffset,
+                    transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+                  }}
+                />
+              </g>
+
+              {/* Right Curve - Tall Dramatic Sweep */}
+              <g>
+                <path
+                  d="M 318 304 C 264 304, 242 175, 224 56"
+                  fill="none"
+                  stroke="url(#mobRightGrad)"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  opacity="0.45"
+                  filter="drop-shadow(0 0 8px rgba(225,29,72,0.6))"
+                  style={{
+                    strokeDasharray: mobilePathLength,
+                    strokeDashoffset: mobileDashOffset,
+                    transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+                  }}
+                />
+                <path
+                  d="M 318 304 C 264 304, 242 175, 224 56"
+                  fill="none"
+                  stroke="#fff5f5"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  style={{
+                    strokeDasharray: mobilePathLength,
+                    strokeDashoffset: mobileDashOffset,
+                    transition: "stroke-dashoffset 1.8s cubic-bezier(0.25, 0.1, 0.25, 1.0)",
+                  }}
+                />
+              </g>
 
               {/* Mobile Badges - Left (Strategy, SEO, Branding) */}
               <g
-                transform="translate(18, 140)"
+                transform="translate(4, 258)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ff2626" />
-                <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">STRATEGY</text>
+                <rect x="0" y="0" width="66" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
+                <circle cx="9" cy="10" r="2.5" fill="#ff2626" />
+                <text x="17" y="13.5" fill="#ffffff" fontSize="8" fontWeight="700">STRATEGY</text>
               </g>
 
               <g
-                transform="translate(60, 92)"
+                transform="translate(49, 200)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="44" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ff2626" />
-                <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">SEO</text>
+                <rect x="0" y="0" width="46" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,38,38,0.45)" strokeWidth="1" />
+                <circle cx="9" cy="10" r="2.5" fill="#ff2626" />
+                <text x="17" y="13.5" fill="#ffffff" fontSize="8" fontWeight="700">SEO</text>
               </g>
 
               <g
-                transform="translate(78, 44)"
+                transform="translate(47, 125)"
                 className={`transition-opacity duration-500 delay-700 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="62" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,38,38,0.5)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ff2626" />
-                <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">BRANDING</text>
+                <rect x="0" y="0" width="66" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,38,38,0.5)" strokeWidth="1" />
+                <circle cx="9" cy="10" r="2.5" fill="#ff2626" />
+                <text x="17" y="13.5" fill="#ffffff" fontSize="8" fontWeight="700">BRANDING</text>
               </g>
 
               {/* Mobile Badges - Right (Engagement, Design, Editing) */}
               <g
-                transform="translate(270, 140)"
+                transform="translate(290, 258)"
                 className={`transition-opacity duration-500 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="70" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ff3355" />
-                <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">ENGAGE</text>
+                <rect x="0" y="0" width="66" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
+                <circle cx="9" cy="10" r="2.5" fill="#ff3355" />
+                <text x="17" y="13.5" fill="#ffffff" fontSize="8" fontWeight="700">ENGAGE</text>
               </g>
 
               <g
-                transform="translate(244, 92)"
+                transform="translate(265, 200)"
                 className={`transition-opacity duration-500 delay-300 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="50" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ff3355" />
-                <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">DESIGN</text>
+                <rect x="0" y="0" width="54" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,51,85,0.45)" strokeWidth="1" />
+                <circle cx="9" cy="10" r="2.5" fill="#ff3355" />
+                <text x="17" y="13.5" fill="#ffffff" fontSize="8" fontWeight="700">DESIGN</text>
               </g>
 
               <g
-                transform="translate(210, 44)"
+                transform="translate(247, 125)"
                 className={`transition-opacity duration-500 delay-700 ${step >= 2 ? "opacity-100" : "opacity-0"}`}
               >
-                <rect x="0" y="0" width="54" height="18" rx="9" fill="#0b0b10" stroke="rgba(255,51,85,0.5)" strokeWidth="1" />
-                <circle cx="8" cy="9" r="2.5" fill="#ff3355" />
-                <text x="16" y="12.5" fill="#ffffff" fontSize="7.5" fontWeight="700">EDITING</text>
+                <rect x="0" y="0" width="56" height="20" rx="10" fill="#0b0b10" stroke="rgba(255,51,85,0.5)" strokeWidth="1" />
+                <circle cx="9" cy="10" r="2.5" fill="#ff3355" />
+                <text x="17" y="13.5" fill="#ffffff" fontSize="8" fontWeight="700">EDITING</text>
               </g>
             </svg>
           </div>
