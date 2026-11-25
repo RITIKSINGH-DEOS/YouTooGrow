@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="ytgBg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#19191e" />
+      <stop offset="100%" stop-color="#070709" />
+    </linearGradient>
+    <radialGradient id="ytgRedAura" cx="80%" cy="76%" r="55%">
+      <stop offset="0%" stop-color="#ff2626" stop-opacity="0.26" />
+      <stop offset="100%" stop-color="#ff2626" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="ytgBorder" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.16" />
+      <stop offset="55%" stop-color="#ff2626" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#ff2626" stop-opacity="0.22" />
+    </linearGradient>
+    <linearGradient id="ytgRed" x1="42" y1="20" x2="58" y2="44.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff3d3d" />
+      <stop offset="100%" stop-color="#dc0808" />
+    </linearGradient>
+  </defs>
+
+  <!-- Full-Bleed Solid Obsidian Squircle (Crisp on Light & Dark Browser Tabs) -->
+  <rect x="0.5" y="0.5" width="63" height="63" rx="15.5" fill="url(#ytgBg)" />
+  <rect x="0.5" y="0.5" width="63" height="63" rx="15.5" fill="url(#ytgRedAura)" />
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" stroke="url(#ytgBorder)" stroke-width="1.5" />
+
+  <!-- Subtle Top Specular Sheen -->
+  <path d="M 16 2.5 H 48" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1" stroke-linecap="round" />
+
+  <!-- Signature Crimson Brand Dot -->
+  <circle cx="53.5" cy="10.5" r="2.2" fill="#ff2626" />
+
+  <!-- Y (Warm Luxury White #f7f4ef) -->
+  <path
+    d="M 5.5 20 H 10.6 L 13.4 29.2 L 16.2 20 H 21.3 L 15.7 34.3 V 44.5 H 11.1 V 34.3 L 5.5 20 Z"
+    fill="#f7f4ef"
+  />
+
+  <!-- T (Warm Luxury White #f7f4ef) -->
+  <path
+    d="M 23.8 20 H 38.8 V 24.3 H 33.6 V 44.5 H 29.0 V 24.3 H 23.8 V 20 Z"
+    fill="#f7f4ef"
+  />
+
+  <!-- G (Crisp Geometric Sans #ff2626 with Flat Terminals Matching Y & T) -->
+  <path
+    d="M 57.6 26.8 C 56.5 22.3 53.6 19.7 49.8 19.7 C 44.6 19.7 41.4 23.8 41.4 32.25 C 41.4 40.7 44.6 44.8 49.9 44.8 C 54.4 44.8 57.8 41.8 57.8 36.2 V 31.2 H 49.6 V 35.3 H 53.3 V 36.4 C 53.3 39.2 52.0 40.5 50.0 40.5 C 47.2 40.5 46.1 38.2 46.1 32.25 C 46.1 26.3 47.2 24.0 49.9 24.0 C 51.7 24.0 52.7 25.0 53.1 26.8 H 57.6 Z"
+    fill="url(#ytgRed)"
+  />
+</svg>
