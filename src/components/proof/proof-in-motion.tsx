@@ -90,24 +90,33 @@ export function ProofInMotion() {
         aria-hidden="true"
       />
 
-      {/* Compact Section Header */}
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-5 sm:mb-6 text-center">
-        <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.22em] text-[#ff2626] block mb-1">
-          Algorithmic Yield
-        </span>
+      {/* Compact Section Header - 15M+ Views Focal Centerpiece */}
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 mb-6 sm:mb-7 text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] mb-2.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ff2626] shadow-[0_0_6px_#ff2626]" />
+          <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.2em] text-[#cfcac0]">
+            Proof in <span className="text-[#ff2626]">Motion</span>
+          </span>
+        </div>
 
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#f7f4ef] tracking-tight mb-1.5">
-          Proof in{" "}
-          <span className="font-serif italic font-normal text-[#ff2626]">
-            Motion
+        <h2 className="tracking-tight mb-2.5">
+          <span className="block text-4xl sm:text-5xl md:text-[54px] font-black leading-[1.02]">
+            <span className="bg-gradient-to-r from-[#ff4d4d] via-[#ff2626] to-[#e00707] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(255,38,38,0.4)]">
+              15M+
+            </span>{" "}
+            <span className="bg-gradient-to-b from-[#ffffff] via-[#f7f4ef] to-[#d6d1c7] bg-clip-text text-transparent">
+              Views
+            </span>
+          </span>
+          <span className="block text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#e8e4dc] mt-1">
+            generated across our{" "}
+            <span className="font-serif italic font-normal text-[#ff2626]">
+              channels
+            </span>
           </span>
         </h2>
 
-        <p className="max-w-lg mx-auto text-[#aaa6a0] text-xs sm:text-[13px] leading-normal">
-          <span className="font-semibold text-[#f7f4ef]">15M+ Views</span> generated across our channels
-        </p>
-
-        <div className="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] text-[#8a8680]">
+        <div className="mt-2 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.06] text-[10px] text-[#8a8680]">
           <ShieldCheck className="w-3 h-3 text-[#00b67a]" />
           <span>Hover to pause &bull; Click any dashboard to inspect</span>
         </div>
